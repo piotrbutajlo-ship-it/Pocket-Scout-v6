@@ -30,6 +30,18 @@
   const FEED_KEY = 'PS_AT_FEED';
   const WARMUP_MINUTES = 50; // Need 50 M1 candles minimum
   const WARMUP_CANDLES = WARMUP_MINUTES;
+  
+  // Learning system configuration
+  const MIN_CONFIDENCE_THRESHOLD = 35; // Minimum confidence to emit signal
+  const LEARNING_ADJUSTMENT_INTERVAL = 30; // Adjust weights every N signals
+  const MIN_SIGNALS_FOR_ADJUSTMENT = 5; // Minimum signals per indicator
+  const WR_INCREASE_THRESHOLD = 55; // Win rate % to increase weight
+  const WR_DECREASE_THRESHOLD = 45; // Win rate % to decrease weight
+  
+  // Pattern and analysis weights
+  const PATTERN_WEIGHT = 2.0; // Weight for pattern detection votes
+  const SUPPORT_RESISTANCE_WEIGHT = 1.5; // Weight for S/R level votes
+  const TREND_WEIGHT = 2.0; // Weight for trend analysis votes
 
   // State
   const circularBuffer = window.CircularBuffer.getInstance();
@@ -666,15 +678,14 @@
 
     // 5. ADD PATTERN ANALYSIS VOTES
     if (multiPatterns.patterns.length > 0) {
-      const patternWeight = 2.0; // Moderate weight for patterns
-      totalWeight += patternWeight;
+      totalWeight += PATTERN_WEIGHT;
       
       for (const pattern of multiPatterns.patterns) {
         if (pattern.bias === 'BULLISH') {
-          buyVotes += patternWeight * pattern.confidence;
+          buyVotes += PATTERN_WEIGHT * pattern.confidence;
           reasons.push(`Pattern: ${pattern.name} (${(pattern.confidence * 100).toFixed(0)}%)`);
         } else if (pattern.bias === 'BEARISH') {
-          sellVotes += patternWeight * pattern.confidence;
+          sellVotes += PATTERN_WEIGHT * pattern.confidence;
           reasons.push(`Pattern: ${pattern.name} (${(pattern.confidence * 100).toFixed(0)}%)`);
         }
       }
@@ -682,17 +693,16 @@
 
     // 6. ADD SUPPORT/RESISTANCE ANALYSIS
     if (supportResistance.length > 0) {
-      const srWeight = 1.5;
-      totalWeight += srWeight;
+      totalWeight += SUPPORT_RESISTANCE_WEIGHT;
       
       for (const level of supportResistance.slice(0, 2)) { // Top 2 levels
         const distance = Math.abs(currentPrice - level.price) / currentPrice;
         if (distance < 0.001) { // Within 0.1% of level
           if (level.type === 'SUPPORT' && currentPrice >= level.price) {
-            buyVotes += srWeight * (level.touches / 5); // Normalize by max touches
+            buyVotes += SUPPORT_RESISTANCE_WEIGHT * (level.touches / 5); // Normalize by max touches
             reasons.push(`Near support ${level.price.toFixed(5)} (${level.touches} touches)`);
           } else if (level.type === 'RESISTANCE' && currentPrice <= level.price) {
-            sellVotes += srWeight * (level.touches / 5);
+            sellVotes += SUPPORT_RESISTANCE_WEIGHT * (level.touches / 5);
             reasons.push(`Near resistance ${level.price.toFixed(5)} (${level.touches} touches)`);
           }
         }
@@ -700,13 +710,12 @@
     }
 
     // 7. ADD TREND ANALYSIS VOTE
-    const trendWeight = 2.0;
-    totalWeight += trendWeight;
+    totalWeight += TREND_WEIGHT;
     if (trend === 'UPTREND') {
-      buyVotes += trendWeight * 0.8;
+      buyVotes += TREND_WEIGHT * 0.8;
       reasons.push('30-min trend: UPTREND');
     } else if (trend === 'DOWNTREND') {
-      sellVotes += trendWeight * 0.8;
+      sellVotes += TREND_WEIGHT * 0.8;
       reasons.push('30-min trend: DOWNTREND');
     }
 
@@ -742,11 +751,11 @@
     let action = null;
     
     // v6.0: NO FALLBACK MODE - require minimum 35% confidence
-    if (buyVotes > sellVotes && finalBuyConfidence >= 35) {
+    if (buyVotes > sellVotes && finalBuyConfidence >= MIN_CONFIDENCE_THRESHOLD) {
       action = 'BUY';
       confidence = finalBuyConfidence;
       console.log(`[Pocket Scout v6.0] 💰 Signal: BUY | Base: ${Math.round(buyConfidence)}% | Regime: ${regimeBoost > 0 ? '+' : ''}${regimeBoost}% | Final: ${confidence}%`);
-    } else if (sellVotes > buyVotes && finalSellConfidence >= 35) {
+    } else if (sellVotes > buyVotes && finalSellConfidence >= MIN_CONFIDENCE_THRESHOLD) {
       action = 'SELL';
       confidence = finalSellConfidence;
       console.log(`[Pocket Scout v6.0] 💰 Signal: SELL | Base: ${Math.round(sellConfidence)}% | Regime: ${regimeBoost > 0 ? '+' : ''}${regimeBoost}% | Final: ${confidence}%`);
@@ -991,7 +1000,7 @@
     console.log(`[Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: ${learningData.successfulPatterns.length} | Failed: ${learningData.failedPatterns.length}`);
     
     // Adjust indicator weights if we have enough data (every 30 signals as per optimization)
-    if ((learningData.successfulPatterns.length + learningData.failedPatterns.length) % 30 === 0) {
+    if ((learningData.successfulPatterns.length + learningData.failedPatterns.length) % LEARNING_ADJUSTMENT_INTERVAL === 0) {
       adjustIndicatorWeights();
     }
     
@@ -1113,7 +1122,7 @@
     }
     
     // v6.0: Adjust indicator weights every 30 signals
-    if ((winningSignals + losingSignals) % 30 === 0 && winningSignals + losingSignals >= 30) {
+    if ((winningSignals + losingSignals) % LEARNING_ADJUSTMENT_INTERVAL === 0 && winningSignals + losingSignals >=  LEARNING_ADJUSTMENT_INTERVAL) {
       adjustIndicatorWeights();
     }
     
@@ -1138,15 +1147,15 @@
     
     for (const [indicator, perf] of Object.entries(learningData.indicatorPerformance)) {
       const total = perf.wins + perf.losses;
-      if (total >= 5) { // Need at least 5 signals to adjust
+      if (total >= MIN_SIGNALS_FOR_ADJUSTMENT) {
         const wr = perf.wr;
         
-        if (wr > 55) {
-          // Increase weight if WR > 55%
+        if (wr > WR_INCREASE_THRESHOLD) {
+          // Increase weight if WR > threshold
           learningData.indicatorWeights[indicator] = Math.min(5.0, learningData.indicatorWeights[indicator] * 1.1);
           adjustments.push(`${indicator}: ${oldWeights[indicator].toFixed(2)} → ${learningData.indicatorWeights[indicator].toFixed(2)} (WR: ${wr.toFixed(1)}% ↑)`);
-        } else if (wr < 45) {
-          // Decrease weight if WR < 45%
+        } else if (wr < WR_DECREASE_THRESHOLD) {
+          // Decrease weight if WR < threshold
           learningData.indicatorWeights[indicator] = Math.max(0.5, learningData.indicatorWeights[indicator] * 0.9);
           adjustments.push(`${indicator}: ${oldWeights[indicator].toFixed(2)} → ${learningData.indicatorWeights[indicator].toFixed(2)} (WR: ${wr.toFixed(1)}% ↓)`);
         }
