@@ -1,20 +1,23 @@
 /**
- * Pocket Scout v5.0 WIN - Profitable Trading System
- * Fixed all critical bugs from v4.0, optimized for consistent profitability
+ * Pocket Scout v6.0 - Multi-Candle Historical Analysis System
  * 
- * FIXES IN v5.0 WIN:
- * 1. Fixed Chrome console error (ohlcM5/ohlcM15 undefined reference)
- * 2. Fixed signal generation (was only 1 signal per session)
- * 3. Fixed Analytics panel display (was blank due to error)
- * 4. Enhanced error handling and logging
- * 5. Improved AI threshold and fallback logic
+ * NEW IN v6.0:
+ * 1. Historical multi-candle analysis (50-600 candles)
+ * 2. 15 active indicators with regime-based weighting
+ * 3. Multi-candle pattern recognition (20-100 candles lookback)
+ * 4. Support/Resistance detection from 50+ candles
+ * 5. Trend detection over 30-minute windows
+ * 6. Pattern detection: double top/bottom, head & shoulders, triangles
+ * 7. No fallback mode - minimum 35% confidence threshold
+ * 8. Historical learning system - adjusts weights every 30 signals
+ * 9. Per-indicator performance tracking
+ * 10. Enhanced UI with pattern analysis
  * 
- * FEATURES FROM v4.0 (preserved):
- * - Williams %R - Fast momentum for RANGING markets
- * - CCI - Superior overbought/oversold detection
- * - Awesome Oscillator - Momentum reversal detector
- * - NO MTF - Removed (100% conflicts on M3)
- * - RANGING Strategy - Mean-reversion optimized
+ * PRESERVED FROM v5.0:
+ * - Auto Trader signal compatibility
+ * - Configurable signal intervals (1-10 minutes)
+ * - Regime detection (TRENDING/RANGING/VOLATILE)
+ * - Win rate tracking and learning
  * 
  * Target WR: 55-60% (profitable with proper money management)
  * by Claude Opus
@@ -23,9 +26,9 @@
 (function() {
   'use strict';
 
-  const VERSION = '5.0.0 WIN';
+  const VERSION = '6.0.0';
   const FEED_KEY = 'PS_AT_FEED';
-  const WARMUP_MINUTES = 50; // Need 50 M1 candles for indicators
+  const WARMUP_MINUTES = 50; // Need 50 M1 candles minimum
   const WARMUP_CANDLES = WARMUP_MINUTES;
 
   // State
@@ -45,18 +48,45 @@
   // Configurable signal interval (minutes)
   let signalIntervalMinutes = 3; // Default 3 minutes (optimized for M3 trading)
   
-  // Advanced Learning System with NEW INDICATORS
-  // v4.0 weights: Added Williams %R, CCI, Awesome Oscillator
+  // Advanced Learning System with ALL 15 INDICATORS
+  // v6.0: Complete indicator suite with per-indicator performance tracking
   let learningData = {
     indicatorWeights: { 
-      rsi: 4.0,          // 54.9% WR - best performer
-      williamsR: 3.5,    // NEW - expected 55-60% WR in RANGING
-      cci: 3.0,          // NEW - expected 58-62% WR in RANGING
-      ao: 2.5,           // NEW - Awesome Oscillator for momentum
-      bb: 2.0,           // Bollinger Bands
-      stoch: 2.0,        // Stochastic
-      macd: 0.5,         // 0% WR - kept minimal
-      ema: 0.5           // 0% WR - kept minimal
+      rsi: 4.0,           // RSI (14)
+      williamsR: 3.5,     // Williams %R (14)
+      cci: 3.0,           // CCI (20)
+      ao: 2.5,            // Awesome Oscillator
+      bb: 2.0,            // Bollinger Bands (20,2)
+      stoch: 2.0,         // Stochastic (14,3,3)
+      macd: 1.5,          // MACD (12,26,9)
+      osma: 1.5,          // OsMA
+      momentum: 1.5,      // Momentum (10)
+      psar: 2.0,          // Parabolic SAR (0.02, 0.2)
+      stc: 1.8,           // Schaff Trend Cycle
+      vortex: 1.8,        // Vortex Indicator
+      aroon: 1.8,         // Aroon (25)
+      bears: 1.5,         // Bears Power (13)
+      bulls: 1.5,         // Bulls Power (13)
+      demarker: 1.5       // DeMarker (14)
+    },
+    // Per-indicator performance tracking for learning
+    indicatorPerformance: {
+      rsi: { wins: 0, losses: 0, wr: 0 },
+      williamsR: { wins: 0, losses: 0, wr: 0 },
+      cci: { wins: 0, losses: 0, wr: 0 },
+      ao: { wins: 0, losses: 0, wr: 0 },
+      bb: { wins: 0, losses: 0, wr: 0 },
+      stoch: { wins: 0, losses: 0, wr: 0 },
+      macd: { wins: 0, losses: 0, wr: 0 },
+      osma: { wins: 0, losses: 0, wr: 0 },
+      momentum: { wins: 0, losses: 0, wr: 0 },
+      psar: { wins: 0, losses: 0, wr: 0 },
+      stc: { wins: 0, losses: 0, wr: 0 },
+      vortex: { wins: 0, losses: 0, wr: 0 },
+      aroon: { wins: 0, losses: 0, wr: 0 },
+      bears: { wins: 0, losses: 0, wr: 0 },
+      bulls: { wins: 0, losses: 0, wr: 0 },
+      demarker: { wins: 0, losses: 0, wr: 0 }
     },
     successfulPatterns: [],
     failedPatterns: [],
@@ -221,39 +251,66 @@
     return 'TRENDING'; // Default
   }
   
-  // Adjust indicator weights based on market regime
+  // Adjust indicator weights based on market regime (v6.0: All 15 indicators)
   function getRegimeAdjustedWeights(regime) {
     const baseWeights = { ...learningData.indicatorWeights };
     
     if (regime === 'TRENDING') {
       // Boost trend-following indicators
       baseWeights.macd *= 1.3;
-      baseWeights.ema *= 1.2;
-      baseWeights.ao *= 1.3; // Awesome Oscillator good for trends
-      baseWeights.rsi *= 0.8; // Reduce mean-reversion
+      baseWeights.osma *= 1.3;
+      baseWeights.ao *= 1.3;
+      baseWeights.momentum *= 1.4;
+      baseWeights.psar *= 1.4;
+      baseWeights.stc *= 1.3;
+      baseWeights.vortex *= 1.3;
+      baseWeights.aroon *= 1.3;
+      // Reduce mean-reversion
+      baseWeights.rsi *= 0.8;
       baseWeights.williamsR *= 0.8;
       baseWeights.cci *= 0.8;
       baseWeights.stoch *= 0.8;
+      baseWeights.bb *= 0.9;
+      baseWeights.bears *= 0.9;
+      baseWeights.bulls *= 0.9;
+      baseWeights.demarker *= 0.8;
     } else if (regime === 'RANGING') {
-      // Boost mean-reversion indicators - v4.0 STRATEGY
-      baseWeights.rsi *= 1.5;          // Primary for RANGING
-      baseWeights.williamsR *= 1.5;    // NEW - Fast momentum
-      baseWeights.cci *= 1.4;           // NEW - Overbought/oversold
+      // Boost mean-reversion indicators
+      baseWeights.rsi *= 1.5;
+      baseWeights.williamsR *= 1.5;
+      baseWeights.cci *= 1.4;
       baseWeights.stoch *= 1.3;
       baseWeights.bb *= 1.3;
-      baseWeights.ao *= 0.7;            // Reduce momentum in ranging
-      baseWeights.macd *= 0.6;          // Reduce trend-following
-      baseWeights.ema *= 0.6;
+      baseWeights.demarker *= 1.3;
+      // Reduce trend-following
+      baseWeights.ao *= 0.7;
+      baseWeights.macd *= 0.6;
+      baseWeights.osma *= 0.6;
+      baseWeights.momentum *= 0.7;
+      baseWeights.psar *= 0.7;
+      baseWeights.stc *= 0.7;
+      baseWeights.vortex *= 0.7;
+      baseWeights.aroon *= 0.7;
+      baseWeights.bears *= 0.8;
+      baseWeights.bulls *= 0.8;
     } else if (regime === 'VOLATILE') {
       // Be more conservative in volatile markets
       baseWeights.rsi *= 0.9;
       baseWeights.williamsR *= 0.9;
       baseWeights.cci *= 0.9;
       baseWeights.macd *= 0.8;
-      baseWeights.ema *= 0.8;
+      baseWeights.osma *= 0.8;
       baseWeights.bb *= 1.2; // BB works well in volatile
       baseWeights.stoch *= 0.9;
       baseWeights.ao *= 0.9;
+      baseWeights.momentum *= 0.8;
+      baseWeights.psar *= 0.9;
+      baseWeights.stc *= 0.9;
+      baseWeights.vortex *= 0.9;
+      baseWeights.aroon *= 0.9;
+      baseWeights.bears *= 0.9;
+      baseWeights.bulls *= 0.9;
+      baseWeights.demarker *= 0.9;
     }
     
     return baseWeights;
@@ -262,7 +319,7 @@
   // REMOVED: checkTimeframeAlignment() - MTF not used in v4.0
   // REMOVED: analyzeSingleTimeframe() - MTF not used in v4.0
 
-  // Calculate confidence based on indicator consensus + Market Regime (v4.0: REMOVED MTF)
+  // Calculate confidence based on ALL 15 indicators + Multi-Candle Analysis (v6.0)
   function analyzeIndicators() {
     if (!warmupComplete || ohlcM1.length < WARMUP_CANDLES) {
       return null;
@@ -275,36 +332,52 @@
     
     // 1. DETECT MARKET REGIME
     currentMarketRegime = detectMarketRegime(closes, highs, lows);
-    console.log(`[Pocket Scout v5 WIN] 🌊 Market Regime: ${currentMarketRegime}`);
+    console.log(`[Pocket Scout v6.0] 🌊 Market Regime: ${currentMarketRegime}`);
 
-    // 2. GET REGIME-ADJUSTED WEIGHTS
+    // 2. GET REGIME-ADJUSTED WEIGHTS (all 15 indicators)
     const weights = getRegimeAdjustedWeights(currentMarketRegime);
 
-    // Calculate all indicators (v4.0: Added Williams %R, CCI, Awesome Oscillator)
+    // 3. CALCULATE ALL 15 INDICATORS
     const rsi = TI.calculateRSI(closes, 14);
     const macd = TI.calculateMACD(closes, 12, 26, 9);
-    const ema9 = TI.calculateEMA(closes, 9);
-    const ema21 = TI.calculateEMA(closes, 21);
-    const ema50 = TI.calculateEMA(closes, 50);
     const bb = TI.calculateBollingerBands(closes, 20, 2);
     const adx = TI.calculateADX(highs, lows, closes, 14);
     const atr = TI.calculateATR(highs, lows, closes, 14);
     const stoch = TI.calculateStochastic(highs, lows, closes, 14, 3);
-    const williamsR = TI.calculateWilliamsR(highs, lows, closes, 14); // v4.0 NEW
-    const cci = TI.calculateCCI(highs, lows, closes, 20);              // v4.0 NEW
-    const ao = TI.calculateAwesomeOscillator(highs, lows);              // v4.0 NEW
+    const williamsR = TI.calculateWilliamsR(highs, lows, closes, 14);
+    const cci = TI.calculateCCI(highs, lows, closes, 20);
+    const ao = TI.calculateAwesomeOscillator(highs, lows);
+    const osma = TI.calculateOsMA(closes, 12, 26, 9);
+    const momentum = TI.calculateMomentum(closes, 10);
+    const psar = TI.calculateParabolicSAR(highs, lows, closes, 0.02, 0.2);
+    const stc = TI.calculateSchaffTrendCycle(closes, 23, 50, 10);
+    const vortex = TI.calculateVortexIndicator(highs, lows, closes, 14);
+    const aroon = TI.calculateAroon(highs, lows, 25);
+    const bears = TI.calculateBearsPower(highs, lows, closes, 13);
+    const bulls = TI.calculateBullsPower(highs, lows, closes, 13);
+    const demarker = TI.calculateDeMarker(highs, lows, closes, 14);
 
-    if (!rsi || !macd || !ema9 || !ema21 || !bb || !adx || !atr) {
+    // v6.0: NO FALLBACK MODE - require real data
+    if (!rsi || !macd || !bb || !adx || !atr) {
+      console.log('[Pocket Scout v6.0] ⚠️ Insufficient indicator data - skipping signal');
       return null;
     }
 
     const currentPrice = closes[closes.length - 1];
     
-    // Enhanced vote system with REGIME-ADJUSTED weights
+    // 4. HISTORICAL MULTI-CANDLE ANALYSIS
+    const supportResistance = TI.detectSupportResistance(ohlcM1, Math.min(100, ohlcM1.length));
+    const trend = TI.detectTrend(ohlcM1, Math.min(30, ohlcM1.length));
+    const multiPatterns = TI.detectMultiCandlePatterns(ohlcM1, Math.min(100, ohlcM1.length));
+    
+    console.log(`[Pocket Scout v6.0] 📊 Trend: ${trend}, Patterns: ${multiPatterns.patterns.length}`);
+    
+    // Enhanced vote system with ALL 15 INDICATORS + REGIME-ADJUSTED weights
     let buyVotes = 0;
     let sellVotes = 0;
     let totalWeight = 0;
     const reasons = [];
+    const indicatorSignals = {}; // Track which indicators contributed
 
     // RSI vote - Use regime-adjusted weight with ENHANCED THRESHOLDS
     const rsiWeight = weights.rsi;
