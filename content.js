@@ -428,22 +428,11 @@
     if (macd.histogram > 0 && macd.macd > macd.signal) {
       buyVotes += macdWeight * macdStrength;
       reasons.push(`MACD bullish (${macd.histogram.toFixed(5)})`);
+      indicatorSignals.macd = 'BUY';
     } else if (macd.histogram < 0 && macd.macd < macd.signal) {
       sellVotes += macdWeight * macdStrength;
       reasons.push(`MACD bearish (${macd.histogram.toFixed(5)})`);
-    }
-
-    // EMA Crossover vote - Use regime-adjusted weight
-    const emaWeight = weights.ema;
-    totalWeight += emaWeight;
-    const emaDiff = Math.abs(ema9 - ema21) / ema21;
-    const emaStrength = Math.min(1, emaDiff * 100);
-    if (ema9 > ema21 && currentPrice > ema9) {
-      buyVotes += emaWeight * emaStrength;
-      reasons.push('EMA9 > EMA21 (bullish)');
-    } else if (ema9 < ema21 && currentPrice < ema9) {
-      sellVotes += emaWeight * emaStrength;
-      reasons.push('EMA9 < EMA21 (bearish)');
+      indicatorSignals.macd = 'SELL';
     }
 
     // Bollinger Bands vote - Use regime-adjusted weight
