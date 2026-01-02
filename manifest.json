@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Pocket Scout v5 WIN",
+  "version": "5.0.0",
+  "description": "Pocket Scout v5 WIN - Profitable binary options signals with Williams %R, CCI, Awesome Oscillator. Fixed bugs, optimized for consistent profitability.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://pocketoption.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://pocketoption.com/*"],
+      "js": [
+        "circular-buffer.js",
+        "technical-indicators.js",
+        "cyclic-decision-engine.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Pocket Scout v5 WIN"
+  }
+}
+
