@@ -1,0 +1,37 @@
+bugsnag-7.min.js?ver=8.0.83:1 [STORE] OPTIONS
+bugsnag-7.min.js?ver=8.0.83:1 APP: Connecting
+bugsnag-7.min.js?ver=8.0.83:1 CHAT RESIZE EVENT
+bugsnag-7.min.js?ver=8.0.83:1 You navigate from the same website
+console.<computed> @ bugsnag-7.min.js?ver=8.0.83:1
+circular-buffer.js:89 [Pocket Scout Time] Circular Buffer loaded - 2000 candles capacity
+technical-indicators.js:776 [Pocket Scout v6.0] Technical Indicators loaded - 15 indicators + pattern detection
+cyclic-decision-engine.js:81 [Pocket Scout v3.0] Cyclic Decision Engine loaded - configurable intervals
+content.js:1656 [Pocket Scout v6.0] Starting...
+content.js:1699 [Pocket Scout v6.0] Content script loaded - by Claude Opus
+content.js:1674 [Pocket Scout v6.0] All dependencies loaded
+bugsnag-7.min.js?ver=8.0.83:1 APP: [+] wss://demo-api-eu.po.market
+bugsnag-7.min.js?ver=8.0.83:1 CHAT: CONNECTED
+bugsnag-7.min.js?ver=8.0.83:1 COUNTERS: Success auth
+bugsnag-7.min.js?ver=8.0.83:1 CHAT: USER READY
+bugsnag-7.min.js?ver=8.0.83:1 APP: Success auth
+bugsnag-7.min.js?ver=8.0.83:1 
+    PixiJS 6.5.10 - ✰ Canvas ✰      http://www.pixijs.com/    ♥♥♥ 
+bugsnag-7.min.js?ver=8.0.83:1 CHAT: DISCONNECTED - transport close
+bugsnag-7.min.js?ver=8.0.83:1 CHAT: CONNECTED
+bugsnag-7.min.js?ver=8.0.83:1 CHAT: USER READY
+bugsnag-7.min.js?ver=8.0.83:1 APP: [-] wss://demo-api-eu.po.market
+bugsnag-7.min.js?ver=8.0.83:1 APP: try connected
+bugsnag-7.min.js?ver=8.0.83:1 APP: Connecting
+bugsnag-7.min.js?ver=8.0.83:1 APP: [+] wss://demo-api-eu.po.market
+bugsnag-7.min.js?ver=8.0.83:1 APP: Success auth
+content.js:219 [Pocket Scout v6.0] ✅ Warmup complete! 50 candles
+cyclic-decision-engine.js:32 [CyclicDecisionEngine] Initializing - first signal in 3 minute(s)
+content.js:824 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:439 Uncaught ReferenceError: ema9 is not defined
+    at analyzeIndicators (content.js:439:30)
+    at generateSignal (content.js:826:22)
+    at Object.initialize (cyclic-decision-engine.js:33:5)
+    at pushTick (content.js:224:39)
+    at content.js:1683:13
