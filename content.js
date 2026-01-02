@@ -882,17 +882,17 @@
     console.log(`[Pocket Scout v6.0] ⏰ Next signal in ${signalIntervalMinutes} minute(s)`);
   }
 
-  // Publish to Auto Trader
+  // Publish to Auto Trader (maintains exact spec compatibility)
   function publishToAutoTrader(signal) {
     const signalData = {
       action: signal.action,
       confidence: signal.confidence,
-      duration: signal.duration,
-      timestamp: signal.timestamp,
       entryPrice: signal.price,
-      wr: signal.wr, // Win Rate for Auto Trader
-      expiry: signal.expiry,
-      isFallback: signal.isFallback
+      duration: signal.duration,
+      reasons: signal.reasons,
+      volatility: signal.volatility,
+      adxStrength: signal.adxStrength,
+      isFallback: false // v6.0: always false, no fallback mode
     };
 
     // Wrap signal in bestSignal format for Auto Trader compatibility
