@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Pocket Scout v5 WIN",
-  "version": "5.0.0",
-  "description": "Pocket Scout v5 WIN - Profitable binary options signals with Williams %R, CCI, Awesome Oscillator. Fixed bugs, optimized for consistent profitability.",
+  "name": "Pocket Scout v6.0",
+  "version": "6.0.0",
+  "description": "Pocket Scout v6.0 - Multi-candle historical analysis with 15 indicators, pattern recognition, and adaptive learning for binary options trading.",
   "permissions": [
     "storage",
     "activeTab"
@@ -27,7 +27,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Pocket Scout v5 WIN"
+    "default_title": "Pocket Scout v6.0"
   }
 }
 

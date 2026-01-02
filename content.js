@@ -122,7 +122,7 @@
         learningData = JSON.parse(savedLearning);
       }
     } catch (e) {
-      console.warn('[Pocket Scout v5 WIN] Error loading settings:', e);
+      console.warn('[Pocket Scout v6.0] Error loading settings:', e);
     }
   }
   
@@ -137,7 +137,7 @@
       }));
       localStorage.setItem('PS_LEARNING_DATA', JSON.stringify(learningData));
     } catch (e) {
-      console.warn('[Pocket Scout v5 WIN] Error saving settings:', e);
+      console.warn('[Pocket Scout v6.0] Error saving settings:', e);
     }
   }
   
@@ -204,7 +204,7 @@
       // Check warmup
       if (!warmupComplete && ohlcM1.length >= WARMUP_CANDLES) {
         warmupComplete = true;
-        console.log(`[Pocket Scout v5 WIN] ✅ Warmup complete! ${ohlcM1.length} candles`);
+        console.log(`[Pocket Scout v6.0] ✅ Warmup complete! ${ohlcM1.length} candles`);
         updateStatusDisplay();
         
         // Start cyclic engine after warmup
@@ -524,10 +524,190 @@
       if (ao > 0) {
         buyVotes += aoWeight * aoStrength;
         reasons.push(`AO bullish (${ao.toFixed(5)})`);
+        indicatorSignals.ao = 'BUY';
       } else if (ao < 0) {
         sellVotes += aoWeight * aoStrength;
         reasons.push(`AO bearish (${ao.toFixed(5)})`);
+        indicatorSignals.ao = 'SELL';
       }
+    }
+
+    // v6.0 NEW: OsMA vote
+    if (osma) {
+      const osmaWeight = weights.osma;
+      totalWeight += osmaWeight;
+      const osmaStrength = Math.min(1, Math.abs(osma) * 1000);
+      if (osma > 0) {
+        buyVotes += osmaWeight * osmaStrength;
+        reasons.push(`OsMA bullish (${osma.toFixed(5)})`);
+        indicatorSignals.osma = 'BUY';
+      } else if (osma < 0) {
+        sellVotes += osmaWeight * osmaStrength;
+        reasons.push(`OsMA bearish (${osma.toFixed(5)})`);
+        indicatorSignals.osma = 'SELL';
+      }
+    }
+
+    // v6.0 NEW: Momentum vote
+    if (momentum !== null) {
+      const momentumWeight = weights.momentum;
+      totalWeight += momentumWeight;
+      const momentumStrength = Math.min(1, Math.abs(momentum) * 1000);
+      if (momentum > 0) {
+        buyVotes += momentumWeight * momentumStrength;
+        reasons.push(`Momentum bullish (${momentum.toFixed(5)})`);
+        indicatorSignals.momentum = 'BUY';
+      } else if (momentum < 0) {
+        sellVotes += momentumWeight * momentumStrength;
+        reasons.push(`Momentum bearish (${momentum.toFixed(5)})`);
+        indicatorSignals.momentum = 'SELL';
+      }
+    }
+
+    // v6.0 NEW: Parabolic SAR vote
+    if (psar && psar.signal) {
+      const psarWeight = weights.psar;
+      totalWeight += psarWeight;
+      if (psar.signal === 'BUY') {
+        buyVotes += psarWeight;
+        reasons.push(`PSAR bullish (${psar.sar.toFixed(5)})`);
+        indicatorSignals.psar = 'BUY';
+      } else if (psar.signal === 'SELL') {
+        sellVotes += psarWeight;
+        reasons.push(`PSAR bearish (${psar.sar.toFixed(5)})`);
+        indicatorSignals.psar = 'SELL';
+      }
+    }
+
+    // v6.0 NEW: Schaff Trend Cycle vote
+    if (stc !== null) {
+      const stcWeight = weights.stc;
+      totalWeight += stcWeight;
+      if (stc < 25) {
+        const strength = (25 - stc) / 25;
+        buyVotes += stcWeight * strength;
+        reasons.push(`STC oversold (${stc.toFixed(1)})`);
+        indicatorSignals.stc = 'BUY';
+      } else if (stc > 75) {
+        const strength = (stc - 75) / 25;
+        sellVotes += stcWeight * strength;
+        reasons.push(`STC overbought (${stc.toFixed(1)})`);
+        indicatorSignals.stc = 'SELL';
+      }
+    }
+
+    // v6.0 NEW: Vortex Indicator vote
+    if (vortex && vortex.signal) {
+      const vortexWeight = weights.vortex;
+      totalWeight += vortexWeight;
+      if (vortex.signal === 'BUY') {
+        buyVotes += vortexWeight;
+        reasons.push(`Vortex bullish (VI+: ${vortex.viPlus.toFixed(2)})`);
+        indicatorSignals.vortex = 'BUY';
+      } else if (vortex.signal === 'SELL') {
+        sellVotes += vortexWeight;
+        reasons.push(`Vortex bearish (VI-: ${vortex.viMinus.toFixed(2)})`);
+        indicatorSignals.vortex = 'SELL';
+      }
+    }
+
+    // v6.0 NEW: Aroon vote
+    if (aroon) {
+      const aroonWeight = weights.aroon;
+      totalWeight += aroonWeight;
+      if (aroon.oscillator > 20) {
+        const strength = Math.min(1, aroon.oscillator / 100);
+        buyVotes += aroonWeight * strength;
+        reasons.push(`Aroon bullish (${aroon.oscillator.toFixed(1)})`);
+        indicatorSignals.aroon = 'BUY';
+      } else if (aroon.oscillator < -20) {
+        const strength = Math.min(1, Math.abs(aroon.oscillator) / 100);
+        sellVotes += aroonWeight * strength;
+        reasons.push(`Aroon bearish (${aroon.oscillator.toFixed(1)})`);
+        indicatorSignals.aroon = 'SELL';
+      }
+    }
+
+    // v6.0 NEW: Bears/Bulls Power vote
+    if (bears !== null && bulls !== null) {
+      const bearsWeight = weights.bears;
+      const bullsWeight = weights.bulls;
+      totalWeight += bearsWeight + bullsWeight;
+      
+      if (bulls > 0 && bulls > Math.abs(bears)) {
+        const strength = Math.min(1, Math.abs(bulls) * 1000);
+        buyVotes += bullsWeight * strength;
+        reasons.push(`Bulls Power (${bulls.toFixed(5)})`);
+        indicatorSignals.bulls = 'BUY';
+      } else if (bears < 0 && Math.abs(bears) > bulls) {
+        const strength = Math.min(1, Math.abs(bears) * 1000);
+        sellVotes += bearsWeight * strength;
+        reasons.push(`Bears Power (${bears.toFixed(5)})`);
+        indicatorSignals.bears = 'SELL';
+      }
+    }
+
+    // v6.0 NEW: DeMarker vote
+    if (demarker !== null) {
+      const demarkerWeight = weights.demarker;
+      totalWeight += demarkerWeight;
+      if (demarker < 0.3) {
+        const strength = (0.3 - demarker) / 0.3;
+        buyVotes += demarkerWeight * strength;
+        reasons.push(`DeMarker oversold (${demarker.toFixed(2)})`);
+        indicatorSignals.demarker = 'BUY';
+      } else if (demarker > 0.7) {
+        const strength = (demarker - 0.7) / 0.3;
+        sellVotes += demarkerWeight * strength;
+        reasons.push(`DeMarker overbought (${demarker.toFixed(2)})`);
+        indicatorSignals.demarker = 'SELL';
+      }
+    }
+
+    // 5. ADD PATTERN ANALYSIS VOTES
+    if (multiPatterns.patterns.length > 0) {
+      const patternWeight = 2.0; // Moderate weight for patterns
+      totalWeight += patternWeight;
+      
+      for (const pattern of multiPatterns.patterns) {
+        if (pattern.bias === 'BULLISH') {
+          buyVotes += patternWeight * pattern.confidence;
+          reasons.push(`Pattern: ${pattern.name} (${(pattern.confidence * 100).toFixed(0)}%)`);
+        } else if (pattern.bias === 'BEARISH') {
+          sellVotes += patternWeight * pattern.confidence;
+          reasons.push(`Pattern: ${pattern.name} (${(pattern.confidence * 100).toFixed(0)}%)`);
+        }
+      }
+    }
+
+    // 6. ADD SUPPORT/RESISTANCE ANALYSIS
+    if (supportResistance.length > 0) {
+      const srWeight = 1.5;
+      totalWeight += srWeight;
+      
+      for (const level of supportResistance.slice(0, 2)) { // Top 2 levels
+        const distance = Math.abs(currentPrice - level.price) / currentPrice;
+        if (distance < 0.001) { // Within 0.1% of level
+          if (level.type === 'SUPPORT' && currentPrice >= level.price) {
+            buyVotes += srWeight * (level.touches / 5); // Normalize by max touches
+            reasons.push(`Near support ${level.price.toFixed(5)} (${level.touches} touches)`);
+          } else if (level.type === 'RESISTANCE' && currentPrice <= level.price) {
+            sellVotes += srWeight * (level.touches / 5);
+            reasons.push(`Near resistance ${level.price.toFixed(5)} (${level.touches} touches)`);
+          }
+        }
+      }
+    }
+
+    // 7. ADD TREND ANALYSIS VOTE
+    const trendWeight = 2.0;
+    totalWeight += trendWeight;
+    if (trend === 'UPTREND') {
+      buyVotes += trendWeight * 0.8;
+      reasons.push('30-min trend: UPTREND');
+    } else if (trend === 'DOWNTREND') {
+      sellVotes += trendWeight * 0.8;
+      reasons.push('30-min trend: DOWNTREND');
     }
 
     // ADX strengthens signal (multiplier, not vote)
@@ -537,59 +717,46 @@
       reasons.push(`ADX strong trend (${adx.adx.toFixed(1)})`);
     }
 
-    // Calculate base confidence based on vote strength
+    // 8. CALCULATE BASE CONFIDENCE based on vote strength
     const buyConfidence = (buyVotes / totalWeight) * 100 * adxMultiplier;
     const sellConfidence = (sellVotes / totalWeight) * 100 * adxMultiplier;
     
-    // v4.0: REMOVED MTF ANALYSIS (had 100% conflicts on M3 interval)
-    
-    // 3. APPLY REGIME CONFIDENCE BOOST (v4.0: Enhanced for RANGING)
+    // 9. APPLY REGIME CONFIDENCE BOOST
     let regimeBoost = 0;
     if (currentMarketRegime === 'TRENDING') {
       regimeBoost = 15;
       reasons.push('Regime: TRENDING (+15%)');
     } else if (currentMarketRegime === 'RANGING') {
-      // v4.0: Increased boost for RANGING with mean-reversion strategy
-      regimeBoost = 20; // Was 10%, now 20% - RANGING is our focus
-      reasons.push('Regime: RANGING (+20% mean-reversion)');
+      regimeBoost = 20;
+      reasons.push('Regime: RANGING (+20%)');
     } else if (currentMarketRegime === 'VOLATILE') {
       regimeBoost = -10;
       reasons.push('Regime: VOLATILE (-10%)');
     }
     
+    // 10. FINAL CONFIDENCE CALCULATION
+    const finalBuyConfidence = Math.min(95, Math.round(buyConfidence + regimeBoost));
+    const finalSellConfidence = Math.min(95, Math.round(sellConfidence + regimeBoost));
+    
     let confidence = 0;
     let action = null;
     
-    // Apply all boosts (v4.0: No MTF boost, just regime + RSI boosts)
-    const finalBuyConfidence = Math.min(95, Math.round(buyConfidence + regimeBoost + rsiBoost));
-    const finalSellConfidence = Math.min(95, Math.round(sellConfidence + regimeBoost + rsiBoost));
-    
-    // REMOVED BUY BIAS: Data shows BUY (47.2% WR) ≈ SELL (46.1% WR) - bias was harmful
-    
-    // Apply MACD contrarian boost (+5% when direction contradicts MACD)
-    let macdContrarian = 0;
-    if (macd.histogram < 0 && buyVotes > sellVotes) {
-      macdContrarian = 5; // BUY when MACD bearish = contrarian WIN pattern
-      reasons.push('MACD contrarian: BUY on bearish (+5%)');
-    } else if (macd.histogram > 0 && sellVotes > buyVotes) {
-      macdContrarian = 5; // SELL when MACD bullish = contrarian pattern
-      reasons.push('MACD contrarian: SELL on bullish (+5%)');
-    }
-    
-    const finalAdjustedBuyConfidence = Math.min(95, finalBuyConfidence + macdContrarian);
-    const finalAdjustedSellConfidence = Math.min(95, finalSellConfidence + macdContrarian);
-    
-    if (buyVotes > sellVotes && finalAdjustedBuyConfidence >= 35) {
+    // v6.0: NO FALLBACK MODE - require minimum 35% confidence
+    if (buyVotes > sellVotes && finalBuyConfidence >= 35) {
       action = 'BUY';
-      confidence = finalAdjustedBuyConfidence;
-      console.log(`[Pocket Scout v5 WIN] 💰 Signal: BUY | Base: ${Math.round(buyConfidence)}% | Regime: ${regimeBoost > 0 ? '+' : ''}${regimeBoost}% | RSI: ${rsiBoost > 0 ? '+' : ''}${rsiBoost}% | Contrarian: +${macdContrarian}% | Final: ${confidence}%`);
-    } else if (sellVotes > buyVotes && finalAdjustedSellConfidence >= 35) {
+      confidence = finalBuyConfidence;
+      console.log(`[Pocket Scout v6.0] 💰 Signal: BUY | Base: ${Math.round(buyConfidence)}% | Regime: ${regimeBoost > 0 ? '+' : ''}${regimeBoost}% | Final: ${confidence}%`);
+    } else if (sellVotes > buyVotes && finalSellConfidence >= 35) {
       action = 'SELL';
-      confidence = finalAdjustedSellConfidence;
-      console.log(`[Pocket Scout v5 WIN] 💰 Signal: SELL | Base: ${Math.round(sellConfidence)}% | Regime: ${regimeBoost > 0 ? '+' : ''}${regimeBoost}% | RSI: ${rsiBoost > 0 ? '+' : ''}${rsiBoost}% | Contrarian: +${macdContrarian}% | Final: ${confidence}%`);
+      confidence = finalSellConfidence;
+      console.log(`[Pocket Scout v6.0] 💰 Signal: SELL | Base: ${Math.round(sellConfidence)}% | Regime: ${regimeBoost > 0 ? '+' : ''}${regimeBoost}% | Final: ${confidence}%`);
+    } else {
+      // v6.0: SKIP SIGNAL if confidence < 35%
+      console.log(`[Pocket Scout v6.0] ⚠️ Confidence too low (BUY: ${finalBuyConfidence}%, SELL: ${finalSellConfidence}%) - skipping signal`);
+      return null;
     }
     
-    // Calculate duration based on ADX and volatility
+    // 11. CALCULATE DURATION based on ADX and volatility
     let duration = 3; // Base: 3 minutes
     
     const avgPrice = closes.slice(-20).reduce((a, b) => a + b, 0) / 20;
@@ -599,7 +766,7 @@
       duration = 5; // Strong trend: 5 minutes
       reasons.push('Duration: 5min (strong trend)');
     } else if (volatilityRatio > 0.015) {
-      duration = Math.floor(Math.random() * 2) + 1; // High volatility: 1-2 minutes
+      duration = 2; // High volatility: 2 minutes
       reasons.push(`Duration: ${duration}min (high volatility)`);
     } else {
       reasons.push('Duration: 3min (normal)');
@@ -609,102 +776,89 @@
       action,
       confidence,
       duration,
-      reasons: reasons.slice(0, 8), // Top 8 reasons (more details)
+      reasons: reasons.slice(0, 10), // Top 10 reasons
       price: currentPrice,
       volatility: volatilityRatio,
       adxStrength: adx.adx,
+      regime: currentMarketRegime,
+      // All 15 indicators
       rsi,
-      williamsR,  // v4.0 NEW
-      cci,        // v4.0 NEW
-      ao,         // v4.0 NEW
+      williamsR,
+      cci,
+      ao,
+      osma,
+      momentum,
+      psar: psar ? psar.sar : null,
+      stc,
+      vortex: vortex ? vortex.viPlus : null,
+      aroon: aroon ? aroon.oscillator : null,
+      bears,
+      bulls,
+      demarker,
       macdHistogram: macd.histogram,
-      regime: currentMarketRegime
-      // v4.0: REMOVED mtfAlignment - MTF not used
+      // Pattern analysis
+      patterns: multiPatterns.patterns,
+      trend,
+      supportResistance,
+      indicatorSignals, // Which indicators contributed
+      isFallback: false // v6.0: NO FALLBACK MODE
     };
   }
 
   // Generate signal (called by cyclic engine)
   function generateSignal() {
     if (!warmupComplete) {
-      console.log(`[Pocket Scout v5 WIN] ⏸️ Warmup in progress: ${ohlcM1.length}/${WARMUP_CANDLES} candles`);
+      console.log(`[Pocket Scout v6.0] ⏸️ Warmup in progress: ${ohlcM1.length}/${WARMUP_CANDLES} candles`);
       return;
     }
 
-    console.log(`[Pocket Scout v5 WIN] 🔄 Generating signal... (interval: ${signalIntervalMinutes} min)`);
+    console.log(`[Pocket Scout v6.0] 🔄 Generating signal... (interval: ${signalIntervalMinutes} min)`);
 
     const analysis = analyzeIndicators();
     
-    // ALWAYS generate a signal - even if confidence is low or neutral
-    let action, confidence, reasons, duration, volatility, adxStrength, rsi, macdHistogram;
-    
-    if (analysis && analysis.action && analysis.confidence >= 35) {
-      // Use analyzed signal (lowered threshold from 40% to 35% for more AI signals)
-      action = analysis.action;
-      confidence = analysis.confidence;
-      reasons = analysis.reasons;
-      duration = analysis.duration;
-      volatility = analysis.volatility;
-      adxStrength = analysis.adxStrength;
-      rsi = analysis.rsi;
-      macdHistogram = analysis.macdHistogram;
-      console.log(`[Pocket Scout v5 WIN] 📊 AI Mode: ${action} @ ${confidence}%`);
-    } else {
-      // Generate fallback signal based on basic trend analysis
-      const closes = ohlcM1.map(c => c.c);
-      const TI = window.TechnicalIndicators;
-      
-      // Use simple trend: compare current price to EMA50
-      const ema50 = TI.calculateEMA(closes, 50);
-      const currentPrice = closes[closes.length - 1];
-      const rsiValue = TI.calculateRSI(closes, 14) || 50;
-      const macd = TI.calculateMACD(closes, 12, 26, 9);
-      
-      // Determine action based on simple trend
-      if (currentPrice > ema50) {
-        action = 'BUY';
-      } else {
-        action = 'SELL';
-      }
-      
-      // Calculate basic confidence (50-65% range for fallback signals)
-      confidence = 50 + Math.floor(Math.random() * 15);
-      
-      reasons = [
-        `Price ${action === 'BUY' ? 'above' : 'below'} EMA50 (trend)`,
-        `RSI: ${rsiValue.toFixed(1)}`,
-        `Fallback signal (insufficient strong indicators)`,
-        `Based on ${ohlcM1.length} M1 candles`
-      ];
-      
-      duration = 3; // Default duration for fallback
-      volatility = 0.01;
-      adxStrength = 20;
-      rsi = rsiValue;
-      macdHistogram = macd ? macd.histogram : 0;
-      
-      console.log(`[Pocket Scout v5 WIN] ⚡ Fallback Mode: ${action} @ ${confidence}% (EMA50 trend)`);
+    // v6.0: NO FALLBACK MODE - skip signal if confidence < 35%
+    if (!analysis || !analysis.action) {
+      console.log(`[Pocket Scout v6.0] ⏭️ Skipping signal - insufficient confidence or data`);
+      return;
     }
 
     const signal = {
-      action: action,
-      confidence: confidence,
-      duration: duration,
-      expiry: duration * 60, // Convert to seconds
-      reasons: reasons,
+      action: analysis.action,
+      confidence: analysis.confidence,
+      duration: analysis.duration,
+      expiry: analysis.duration * 60, // Convert to seconds
+      reasons: analysis.reasons,
       price: lastPrice,
       timestamp: Date.now(),
-      volatility: volatility,
-      adxStrength: adxStrength,
-      rsi: rsi,
-      macdHistogram: macdHistogram,
+      volatility: analysis.volatility,
+      adxStrength: analysis.adxStrength,
+      regime: analysis.regime,
+      // All indicator values for learning
+      rsi: analysis.rsi,
+      williamsR: analysis.williamsR,
+      cci: analysis.cci,
+      ao: analysis.ao,
+      osma: analysis.osma,
+      momentum: analysis.momentum,
+      psar: analysis.psar,
+      stc: analysis.stc,
+      vortex: analysis.vortex,
+      aroon: analysis.aroon,
+      bears: analysis.bears,
+      bulls: analysis.bulls,
+      demarker: analysis.demarker,
+      macdHistogram: analysis.macdHistogram,
+      patterns: analysis.patterns,
+      trend: analysis.trend,
+      indicatorSignals: analysis.indicatorSignals,
       wr: calculateWinRate(),
-      isFallback: !analysis || !analysis.action || analysis.confidence < 35,
+      isFallback: false,
       entryPrice: lastPrice,
       result: null // Will be set after duration expires
     };
 
     lastSignal = signal;
-    totalSignals++; // Count every signal
+    totalSignals++;
     saveSettings();
     
     // Add to history
@@ -713,19 +867,19 @@
       signalHistory = signalHistory.slice(0, MAX_HISTORY);
     }
 
-    console.log(`[Pocket Scout v5 WIN] ✅ ${signal.isFallback ? 'FALLBACK' : 'AI'} Signal: ${signal.action} @ ${signal.confidence}% | WR: ${signal.wr.toFixed(1)}% | ${signal.duration}min | ${signal.price.toFixed(5)}`);
-    console.log(`[Pocket Scout v5 WIN] 📝 Reasons: ${reasons.slice(0, 3).join(', ')}`);
+    console.log(`[Pocket Scout v6.0] ✅ Signal: ${signal.action} @ ${signal.confidence}% | WR: ${signal.wr.toFixed(1)}% | ${signal.duration}min | ${signal.price.toFixed(5)}`);
+    console.log(`[Pocket Scout v6.0] 📝 Reasons: ${analysis.reasons.slice(0, 3).join(', ')}`);
+    console.log(`[Pocket Scout v6.0] 📊 Indicators: ${Object.keys(signal.indicatorSignals).length} active`);
     
     // Schedule automatic result check after duration expires
     scheduleSignalResultCheck(signal);
     
     updateUI();
     
-    // ALWAYS publish to Auto Trader - no threshold filtering
-    // Auto Trader will decide based on its own threshold settings
+    // Publish to Auto Trader with exact required format
     publishToAutoTrader(signal);
     
-    console.log(`[Pocket Scout v5 WIN] ⏰ Next signal in ${signalIntervalMinutes} minute(s)`);
+    console.log(`[Pocket Scout v6.0] ⏰ Next signal in ${signalIntervalMinutes} minute(s)`);
   }
 
   // Publish to Auto Trader
@@ -747,7 +901,7 @@
     };
 
     localStorage.setItem(FEED_KEY, JSON.stringify(feed));
-    console.log(`[Pocket Scout v5 WIN] 📤 Published to Auto Trader:`, signalData);
+    console.log(`[Pocket Scout v6.0] 📤 Published to Auto Trader:`, signalData);
   }
   
   // Schedule automatic result check after signal duration expires
@@ -758,7 +912,7 @@
       checkSignalResult(signal);
     }, durationMs);
     
-    console.log(`[Pocket Scout v5 WIN] ⏰ Scheduled result check for ${signal.action} signal in ${signal.duration} minutes`);
+    console.log(`[Pocket Scout v6.0] ⏰ Scheduled result check for ${signal.action} signal in ${signal.duration} minutes`);
   }
   
   // Check signal result after duration expires
@@ -771,7 +925,7 @@
     const entryPrice = signal.entryPrice;
     
     if (!currentPrice || !entryPrice) {
-      console.log(`[Pocket Scout v5 WIN] ⚠️ Cannot check signal result - missing price data`);
+      console.log(`[Pocket Scout v6.0] ⚠️ Cannot check signal result - missing price data`);
       return;
     }
     
@@ -833,8 +987,8 @@
       (isWin ? '📈' : '📉') : 
       (isWin ? '📉' : '📈');
     
-    console.log(`[Pocket Scout v5 WIN] ${isWin ? '✅' : '❌'} Signal verified | Action: ${signal.action} | Result: ${signal.result} | Entry: ${entryPrice.toFixed(5)} → Exit: ${currentPrice.toFixed(5)} ${changeSymbol} ${signal.priceChange >= 0 ? '+' : ''}${signal.priceChange.toFixed(2)}%`);
-    console.log(`[Pocket Scout v5 WIN] 🎓 Learning: Pattern recorded | Successful: ${learningData.successfulPatterns.length} | Failed: ${learningData.failedPatterns.length}`);
+    console.log(`[Pocket Scout v6.0] ${isWin ? '✅' : '❌'} Signal verified | Action: ${signal.action} | Result: ${signal.result} | Entry: ${entryPrice.toFixed(5)} → Exit: ${currentPrice.toFixed(5)} ${changeSymbol} ${signal.priceChange >= 0 ? '+' : ''}${signal.priceChange.toFixed(2)}%`);
+    console.log(`[Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: ${learningData.successfulPatterns.length} | Failed: ${learningData.failedPatterns.length}`);
     
     // Adjust indicator weights if we have enough data (every 30 signals as per optimization)
     if ((learningData.successfulPatterns.length + learningData.failedPatterns.length) % 30 === 0) {
@@ -852,7 +1006,7 @@
       checkSignalResult(signal);
     }, durationMs);
     
-    console.log(`[Pocket Scout v5 WIN] ⏰ Scheduled result check for ${signal.action} signal in ${signal.duration} minutes`);
+    console.log(`[Pocket Scout v6.0] ⏰ Scheduled result check for ${signal.action} signal in ${signal.duration} minutes`);
   }
   
   // Check signal result after duration expires
@@ -865,7 +1019,7 @@
     const entryPrice = signal.entryPrice;
     
     if (!currentPrice || !entryPrice) {
-      console.log(`[Pocket Scout v5 WIN] ⚠️ Cannot check signal result - missing price data`);
+      console.log(`[Pocket Scout v6.0] ⚠️ Cannot check signal result - missing price data`);
       return;
     }
     
@@ -897,36 +1051,58 @@
     const priceChange = ((currentPrice - entryPrice) / entryPrice * 100).toFixed(3);
     const newWR = calculateWinRate();
     
-    console.log(`[Pocket Scout v5 WIN] 🎯 Signal result: ${signal.result} | ${signal.action} @ ${entryPrice.toFixed(5)} → ${currentPrice.toFixed(5)} (${priceChange > 0 ? '+' : ''}${priceChange}%) | WR: ${newWR.toFixed(1)}%`);
+    console.log(`[Pocket Scout v6.0] 🎯 Signal result: ${signal.result} | ${signal.action} @ ${entryPrice.toFixed(5)} → ${currentPrice.toFixed(5)} (${priceChange > 0 ? '+' : ''}${priceChange}%) | WR: ${newWR.toFixed(1)}%`);
     
     // Update UI to reflect new WR
     updateUI();
   }
   
-  // LEARNING SYSTEM: Analyze signal patterns and adjust strategy
+  // LEARNING SYSTEM: Analyze signal patterns and adjust strategy (v6.0: Per-indicator tracking)
   function learnFromSignalResult(signal, isWin) {
-    // Extract pattern data (removed timeOfDay per user request)
+    // Extract pattern data
     const pattern = {
       action: signal.action,
       confidence: signal.confidence,
-      rsi: signal.rsi,
-      macdHistogram: signal.macdHistogram,
+      regime: signal.regime,
       adxStrength: signal.adxStrength,
       volatility: signal.volatility,
       duration: signal.duration,
-      isFallback: signal.isFallback,
       result: isWin ? 'WIN' : 'LOSS'
     };
     
-    // Store pattern in appropriate list (no limit - removed 100 pattern cap)
+    // Store pattern in appropriate list
     if (isWin) {
       learningData.successfulPatterns.push(pattern);
     } else {
       learningData.failedPatterns.push(pattern);
     }
     
+    // v6.0: Track per-indicator performance
+    if (signal.indicatorSignals) {
+      for (const [indicator, signalDirection] of Object.entries(signal.indicatorSignals)) {
+        if (!learningData.indicatorPerformance[indicator]) {
+          learningData.indicatorPerformance[indicator] = { wins: 0, losses: 0, wr: 0 };
+        }
+        
+        // Only track if indicator signal matched the action taken
+        if (signalDirection === signal.action) {
+          if (isWin) {
+            learningData.indicatorPerformance[indicator].wins++;
+          } else {
+            learningData.indicatorPerformance[indicator].losses++;
+          }
+          
+          // Update win rate
+          const total = learningData.indicatorPerformance[indicator].wins + learningData.indicatorPerformance[indicator].losses;
+          if (total > 0) {
+            learningData.indicatorPerformance[indicator].wr = (learningData.indicatorPerformance[indicator].wins / total) * 100;
+          }
+        }
+      }
+    }
+    
     // Track confidence range performance
-    const confRange = Math.floor(pattern.confidence / 10) * 10; // Round to nearest 10
+    const confRange = Math.floor(pattern.confidence / 10) * 10;
     if (!learningData.bestConfidenceRange[confRange]) {
       learningData.bestConfidenceRange[confRange] = { wins: 0, losses: 0 };
     }
@@ -936,72 +1112,53 @@
       learningData.bestConfidenceRange[confRange].losses++;
     }
     
-    // Analyze and adjust indicator weights (every 30 signals - increased from 20)
+    // v6.0: Adjust indicator weights every 30 signals
     if ((winningSignals + losingSignals) % 30 === 0 && winningSignals + losingSignals >= 30) {
       adjustIndicatorWeights();
     }
     
-    console.log(`[Pocket Scout v5 WIN] 🎓 Learning: Pattern recorded | Successful: ${learningData.successfulPatterns.length} | Failed: ${learningData.failedPatterns.length}`);
+    console.log(`[Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: ${learningData.successfulPatterns.length} | Failed: ${learningData.failedPatterns.length}`);
   }
   
-  // Adjust indicator weights based on learning
+  // v6.0: Adjust indicator weights based on per-indicator learning
   function adjustIndicatorWeights() {
-    console.log('[Pocket Scout v5 WIN] 🧠 Analyzing patterns and adjusting indicator weights...');
+    console.log('[Pocket Scout v6.0] 🧠 Analyzing indicator performance and adjusting weights...');
     
     const successful = learningData.successfulPatterns;
     const failed = learningData.failedPatterns;
     
     if (successful.length < 10 || failed.length < 10) {
-      console.log('[Pocket Scout v5 WIN] 🎓 Not enough data to adjust weights yet');
+      console.log('[Pocket Scout v6.0] 🎓 Not enough data to adjust weights yet');
       return;
     }
     
-    // Analyze RSI effectiveness
-    const successRSI = successful.filter(p => !p.isFallback && ((p.action === 'BUY' && p.rsi < 45) || (p.action === 'SELL' && p.rsi > 55)));
-    const failRSI = failed.filter(p => !p.isFallback && ((p.action === 'BUY' && p.rsi < 45) || (p.action === 'SELL' && p.rsi > 55)));
-    const rsiWinRate = successRSI.length / (successRSI.length + failRSI.length) || 0.5;
-    
-    // Analyze MACD effectiveness
-    const successMACD = successful.filter(p => !p.isFallback && Math.abs(p.macdHistogram) > 0.0001);
-    const failMACD = failed.filter(p => !p.isFallback && Math.abs(p.macdHistogram) > 0.0001);
-    const macdWinRate = successMACD.length / (successMACD.length + failMACD.length) || 0.5;
-    
-    // Analyze ADX effectiveness (trend strength)
-    const successADX = successful.filter(p => p.adxStrength > 25);
-    const failADX = failed.filter(p => p.adxStrength > 25);
-    const adxWinRate = successADX.length / (successADX.length + failADX.length) || 0.5;
-    
-    // Adjust weights based on performance (subtle adjustments)
+    // v6.0: Adjust all 15 indicators based on their tracked performance
     const oldWeights = { ...learningData.indicatorWeights };
+    const adjustments = [];
     
-    // RSI adjustment
-    if (rsiWinRate > 0.65) {
-      learningData.indicatorWeights.rsi = Math.min(2.5, learningData.indicatorWeights.rsi * 1.1);
-    } else if (rsiWinRate < 0.45) {
-      learningData.indicatorWeights.rsi = Math.max(0.5, learningData.indicatorWeights.rsi * 0.9);
+    for (const [indicator, perf] of Object.entries(learningData.indicatorPerformance)) {
+      const total = perf.wins + perf.losses;
+      if (total >= 5) { // Need at least 5 signals to adjust
+        const wr = perf.wr;
+        
+        if (wr > 55) {
+          // Increase weight if WR > 55%
+          learningData.indicatorWeights[indicator] = Math.min(5.0, learningData.indicatorWeights[indicator] * 1.1);
+          adjustments.push(`${indicator}: ${oldWeights[indicator].toFixed(2)} → ${learningData.indicatorWeights[indicator].toFixed(2)} (WR: ${wr.toFixed(1)}% ↑)`);
+        } else if (wr < 45) {
+          // Decrease weight if WR < 45%
+          learningData.indicatorWeights[indicator] = Math.max(0.5, learningData.indicatorWeights[indicator] * 0.9);
+          adjustments.push(`${indicator}: ${oldWeights[indicator].toFixed(2)} → ${learningData.indicatorWeights[indicator].toFixed(2)} (WR: ${wr.toFixed(1)}% ↓)`);
+        }
+      }
     }
     
-    // MACD adjustment
-    if (macdWinRate > 0.65) {
-      learningData.indicatorWeights.macd = Math.min(3.0, learningData.indicatorWeights.macd * 1.1);
-    } else if (macdWinRate < 0.45) {
-      learningData.indicatorWeights.macd = Math.max(1.0, learningData.indicatorWeights.macd * 0.9);
+    if (adjustments.length > 0) {
+      console.log(`[Pocket Scout v6.0] 📊 Weight adjustments:`);
+      adjustments.forEach(adj => console.log(`  ${adj}`));
+    } else {
+      console.log('[Pocket Scout v6.0] 📊 No weight adjustments needed (all indicators 45-55% WR)');
     }
-    
-    // EMA adjustment (based on ADX effectiveness as proxy for trend following)
-    if (adxWinRate > 0.65) {
-      learningData.indicatorWeights.ema = Math.min(2.5, learningData.indicatorWeights.ema * 1.1);
-    } else if (adxWinRate < 0.45) {
-      learningData.indicatorWeights.ema = Math.max(0.5, learningData.indicatorWeights.ema * 0.9);
-    }
-    
-    console.log(`[Pocket Scout v5 WIN] 📊 Weight adjustments:
-      RSI: ${oldWeights.rsi.toFixed(2)} → ${learningData.indicatorWeights.rsi.toFixed(2)} (WR: ${(rsiWinRate * 100).toFixed(1)}%)
-      MACD: ${oldWeights.macd.toFixed(2)} → ${learningData.indicatorWeights.macd.toFixed(2)} (WR: ${(macdWinRate * 100).toFixed(1)}%)
-      EMA: ${oldWeights.ema.toFixed(2)} → ${learningData.indicatorWeights.ema.toFixed(2)} (Trend WR: ${(adxWinRate * 100).toFixed(1)}%)`);
-    
-    // Find best confidence range
-    let bestRange = -1;
     let bestRangeWR = 0;
     for (const [range, stats] of Object.entries(learningData.bestConfidenceRange)) {
       const total = stats.wins + stats.losses;
@@ -1014,7 +1171,7 @@
       }
     }
     if (bestRange >= 0) {
-      console.log(`[Pocket Scout v5 WIN] 📈 Best confidence range: ${bestRange}-${bestRange + 10}% (WR: ${(bestRangeWR * 100).toFixed(1)}%)`);
+      console.log(`[Pocket Scout v6.0] 📈 Best confidence range: ${bestRange}-${bestRange + 10}% (WR: ${(bestRangeWR * 100).toFixed(1)}%)`);
     }
   }
 
@@ -1207,36 +1364,39 @@
     }
   }
   
-  // Update analytics display
+  // Update analytics display (v6.0: Show all 15 indicators performance)
   function updateAnalyticsDisplay() {
     const analyticsContent = document.getElementById('ps-analytics-content');
     if (!analyticsContent) return;
     
-    // Calculate indicator effectiveness
+    // v6.0: Get top performing indicators from per-indicator tracking
     let topIndicators = [];
-    if (totalSignals > 0 && learningData.successfulPatterns.length > 0) {
-      const indicatorWRs = {
-        RSI: 0,
-        MACD: 0,
-        EMA: 0,
-        BB: 0,
-        Stoch: 0
-      };
-      
-      // Count successful patterns for each indicator
-      learningData.successfulPatterns.forEach(pattern => {
-        if (pattern.rsi < 40 || pattern.rsi > 60) indicatorWRs.RSI++;
-        if (Math.abs(pattern.macd) > 0.0001) indicatorWRs.MACD++;
-        if (pattern.ema9 && pattern.ema21) indicatorWRs.EMA++;
-      });
-      
-      topIndicators = Object.entries(indicatorWRs)
-        .map(([name, count]) => ({ name, wr: winningSignals > 0 ? (count / winningSignals * 100).toFixed(1) : 0 }))
+    if (learningData.indicatorPerformance) {
+      topIndicators = Object.entries(learningData.indicatorPerformance)
+        .filter(([name, perf]) => (perf.wins + perf.losses) >= 3) // At least 3 signals
+        .map(([name, perf]) => ({ 
+          name: name.toUpperCase(), 
+          wr: perf.wr,
+          total: perf.wins + perf.losses
+        }))
         .sort((a, b) => b.wr - a.wr)
-        .slice(0, 3);
+        .slice(0, 5); // Top 5 indicators
     }
     
-    // Remove Best Hour tracking per user request (market too volatile for time patterns)
+    // Show pattern detection stats
+    let patternStats = '';
+    if (lastSignal && lastSignal.patterns && lastSignal.patterns.length > 0) {
+      patternStats = `
+        <div style="margin-bottom:6px;">
+          <div style="opacity:0.7; margin-bottom:3px;">Recent Patterns:</div>
+          <div style="display:flex; gap:4px; flex-wrap:wrap;">
+            ${lastSignal.patterns.map(p => 
+              `<span style="background:${p.bias === 'BULLISH' ? '#10b981' : p.bias === 'BEARISH' ? '#ef4444' : '#64748b'}; color:#fff; padding:2px 6px; border-radius:3px; font-size:8px;">${p.name}</span>`
+            ).join('')}
+          </div>
+        </div>
+      `;
+    }
     
     analyticsContent.innerHTML = `
       <div style="margin-bottom:8px;">
@@ -1245,19 +1405,26 @@
           <div style="font-weight:700; color:#3b82f6;">${currentMarketRegime}</div>
         </div>
       </div>
+      ${lastSignal && lastSignal.trend ? `
+        <div style="margin-bottom:6px;">
+          <div style="opacity:0.7; margin-bottom:2px;">30-min Trend:</div>
+          <div style="font-weight:600; color:${lastSignal.trend === 'UPTREND' ? '#10b981' : lastSignal.trend === 'DOWNTREND' ? '#ef4444' : '#64748b'};">${lastSignal.trend}</div>
+        </div>
+      ` : ''}
+      ${patternStats}
       ${topIndicators.length > 0 ? `
         <div style="margin-bottom:6px;">
-          <div style="opacity:0.7; margin-bottom:3px;">Top Indicators:</div>
+          <div style="opacity:0.7; margin-bottom:3px;">Top Indicators (WR%):</div>
           <div style="display:flex; gap:4px; flex-wrap:wrap;">
             ${topIndicators.map(ind => 
-              `<span style="background:#3b82f6; color:#fff; padding:2px 6px; border-radius:3px; font-size:9px;">${ind.name} ${ind.wr}%</span>`
+              `<span style="background:#3b82f6; color:#fff; padding:2px 6px; border-radius:3px; font-size:8px;">${ind.name} ${ind.wr.toFixed(0)}% (${ind.total})</span>`
             ).join('')}
           </div>
         </div>
       ` : ''}
       <div style="margin-top:6px;">
-        <div style="opacity:0.7; margin-bottom:2px;">Patterns Analyzed:</div>
-        <div style="font-weight:700; color:#10b981;">${learningData.successfulPatterns.length + learningData.failedPatterns.length}</div>
+        <div style="opacity:0.7; margin-bottom:2px;">Total Signals:</div>
+        <div style="font-weight:700; color:#10b981;">${totalSignals}</div>
       </div>
     `;
   }
@@ -1341,7 +1508,7 @@
     panel.innerHTML = `
       <div id="ps-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:12px; border-bottom:2px solid #3b82f6;">
         <div>
-          <div style="font-weight:700; font-size:18px; color:#60a5fa;">Pocket Scout v5 WIN</div>
+          <div style="font-weight:700; font-size:18px; color:#60a5fa;">Pocket Scout v6.0</div>
           <div style="font-size:9px; opacity:0.6; margin-top:2px;">by Claude Opus</div>
         </div>
         <div style="font-size:10px; background:#ef4444; color:#fff; padding:2px 6px; border-radius:4px; font-weight:600;">LIVE</div>
@@ -1420,7 +1587,7 @@
       if (window.CyclicDecisionEngine && warmupComplete) {
         window.CyclicDecisionEngine.stop();
         window.CyclicDecisionEngine.initialize(generateSignal, signalIntervalMinutes);
-        console.log(`[Pocket Scout v5 WIN] Signal interval updated to ${signalIntervalMinutes} minutes`);
+        console.log(`[Pocket Scout v6.0] Signal interval updated to ${signalIntervalMinutes} minutes`);
       }
     });
   }
@@ -1467,7 +1634,7 @@
         losingSignals++;
       }
       saveSettings();
-      console.log(`[Pocket Scout v5 WIN] Signal result: ${result} | WR: ${calculateWinRate().toFixed(1)}%`);
+      console.log(`[Pocket Scout v6.0] Signal result: ${result} | WR: ${calculateWinRate().toFixed(1)}%`);
       sendResponse({ success: true });
       return true;
     }
@@ -1477,7 +1644,7 @@
 
   // Start processing
   function start() {
-    console.log(`[Pocket Scout v5 WIN] Starting...`);
+    console.log(`[Pocket Scout v6.0] Starting...`);
     
     // Load settings first
     loadSettings();
@@ -1495,7 +1662,7 @@
       if (missing.length === 0) {
         clearInterval(checkDeps);
         
-        console.log(`[Pocket Scout v5 WIN] All dependencies loaded`);
+        console.log(`[Pocket Scout v6.0] All dependencies loaded`);
         
         // Inject panel
         injectPanel();
@@ -1511,7 +1678,7 @@
         // Start countdown timer
         startCountdownTimer();
       } else {
-        console.log(`[Pocket Scout v5 WIN] Waiting for: ${missing.join(', ')}`);
+        console.log(`[Pocket Scout v6.0] Waiting for: ${missing.join(', ')}`);
       }
     }, 200);
   }
@@ -1520,4 +1687,4 @@
 
 })();
 
-console.log('[Pocket Scout v5 WIN] Content script loaded - by Claude Opus');
+console.log('[Pocket Scout v6.0] Content script loaded - by Claude Opus');
