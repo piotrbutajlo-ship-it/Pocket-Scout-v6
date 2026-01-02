@@ -1,0 +1,133 @@
+ [STORE] OPTIONS
+ APP: Connecting
+ CHAT RESIZE EVENT
+ [Pocket Scout Time] Circular Buffer loaded - 2000 candles capacity
+ [Pocket Scout v6.0] Technical Indicators loaded - 15 indicators + pattern detection
+ [Pocket Scout v3.0] Cyclic Decision Engine loaded - configurable intervals
+ [Pocket Scout v6.0] Starting...
+ [Pocket Scout v6.0] Content script loaded - by Claude Opus
+ APP: [+] wss://demo-api-eu.po.market
+ CHAT: CONNECTED
+ [Pocket Scout v6.0] All dependencies loaded
+ CHAT: USER READY
+ COUNTERS: Success auth
+ APP: Success auth
+ 
+    PixiJS 6.5.10 - ✰ Canvas ✰      http://www.pixijs.com/    ♥♥♥ 
+demo-quick-high-low/:1 Access to XMLHttpRequest at 'https://k.clarity.ms/collect' from origin 'https://pocketoption.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+k.clarity.ms/collect:1  Failed to load resource: net::ERR_FAILED
+demo-quick-high-low/:1 Access to XMLHttpRequest at 'https://k.clarity.ms/collect' from origin 'https://pocketoption.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+k.clarity.ms/collect:1  Failed to load resource: net::ERR_FAILED
+demo-quick-high-low/:1 Access to XMLHttpRequest at 'https://k.clarity.ms/collect' from origin 'https://pocketoption.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+k.clarity.ms/collect:1  Failed to load resource: net::ERR_FAILED
+k.clarity.ms/collect:1  Failed to load resource: the server responded with a status of 400 (Bad Request)
+ [Pocket Scout v6.0] ✅ Warmup complete! 50 candles
+ [CyclicDecisionEngine] Initializing - first signal in 3 minute(s)
+ [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+ [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+ [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 3
+ [Pocket Scout v6.0] 💰 Signal: SELL | Base: 17% | Regime: +20% | Final: 37%
+ [Pocket Scout v6.0] ✅ Signal: SELL @ 37% | WR: 0.0% | 3min | 1.14068
+ [Pocket Scout v6.0] 📝 Reasons: RSI neutral (40.2) -10%, MACD bullish (0.00012), AO bearish (-0.00088)
+ [Pocket Scout v6.0] 📊 Indicators: 7 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+cyclic-decision-engine.js:47 [CyclicDecisionEngine] Started - interval: 180s (3 min)
+content.js:1118 [Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: 1 | Failed: 0
+content.js:1052 [Pocket Scout v6.0] 🎯 Signal result: WIN | SELL @ 1.14068 → 1.14019 (-0.043%) | WR: 100.0%
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (180.1s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: TRENDING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:750 [Pocket Scout v6.0] 💰 Signal: SELL | Base: 37% | Regime: +15% | Final: 52%
+content.js:868 [Pocket Scout v6.0] ✅ Signal: SELL @ 52% | WR: 100.0% | 5min | 1.14019
+content.js:869 [Pocket Scout v6.0] 📝 Reasons: RSI neutral (43.6) -10%, MACD bullish (0.00008), AO bearish (-0.00082)
+content.js:870 [Pocket Scout v6.0] 📊 Indicators: 8 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 5 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (181.0s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:753 [Pocket Scout v6.0] ⚠️ Confidence too low (BUY: 28%, SELL: 34%) - skipping signal
+content.js:819 [Pocket Scout v6.0] ⏭️ Skipping signal - insufficient confidence or data
+content.js:1118 [Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: 1 | Failed: 1
+content.js:1052 [Pocket Scout v6.0] 🎯 Signal result: LOSS | SELL @ 1.14019 → 1.14069 (+0.044%) | WR: 50.0%
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (181.0s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:750 [Pocket Scout v6.0] 💰 Signal: SELL | Base: 19% | Regime: +20% | Final: 39%
+content.js:868 [Pocket Scout v6.0] ✅ Signal: SELL @ 39% | WR: 50.0% | 3min | 1.14016
+content.js:869 [Pocket Scout v6.0] 📝 Reasons: RSI neutral (51.8) -10%, MACD bullish (0.00009), AO bearish (-0.00033)
+content.js:870 [Pocket Scout v6.0] 📊 Indicators: 8 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (180.0s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 3
+content.js:750 [Pocket Scout v6.0] 💰 Signal: SELL | Base: 39% | Regime: +20% | Final: 59%
+content.js:868 [Pocket Scout v6.0] ✅ Signal: SELL @ 59% | WR: 33.3% | 3min | 1.14086
+content.js:869 [Pocket Scout v6.0] 📝 Reasons: RSI neutral (54.2) -10%, MACD bullish (0.00014), Price at upper BB
+content.js:870 [Pocket Scout v6.0] 📊 Indicators: 9 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+content.js:1118 [Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: 1 | Failed: 2
+content.js:1052 [Pocket Scout v6.0] 🎯 Signal result: LOSS | SELL @ 1.14016 → 1.14086 (+0.061%) | WR: 25.0%
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (180.0s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:750 [Pocket Scout v6.0] 💰 Signal: SELL | Base: 30% | Regime: +20% | Final: 50%
+content.js:868 [Pocket Scout v6.0] ✅ Signal: SELL @ 50% | WR: 25.0% | 3min | 1.14085
+content.js:869 [Pocket Scout v6.0] 📝 Reasons: RSI overbought (67.4), MACD bullish (0.00012), Price at upper BB
+content.js:870 [Pocket Scout v6.0] 📊 Indicators: 9 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+content.js:1118 [Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: 2 | Failed: 2
+content.js:1052 [Pocket Scout v6.0] 🎯 Signal result: WIN | SELL @ 1.14086 → 1.14085 (-0.001%) | WR: 40.0%
+content.js:1118 [Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: 2 | Failed: 3
+content.js:1052 [Pocket Scout v6.0] 🎯 Signal result: LOSS | SELL @ 1.14085 → 1.14108 (+0.020%) | WR: 40.0%
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (181.0s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:750 [Pocket Scout v6.0] 💰 Signal: SELL | Base: 40% | Regime: +20% | Final: 60%
+content.js:868 [Pocket Scout v6.0] ✅ Signal: SELL @ 60% | WR: 40.0% | 3min | 1.14110
+content.js:869 [Pocket Scout v6.0] 📝 Reasons: RSI overbought (64.3), MACD bullish (0.00012), Price at upper BB
+content.js:870 [Pocket Scout v6.0] 📊 Indicators: 9 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (180.0s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: RANGING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:750 [Pocket Scout v6.0] 💰 Signal: SELL | Base: 31% | Regime: +20% | Final: 51%
+content.js:868 [Pocket Scout v6.0] ✅ Signal: SELL @ 51% | WR: 33.3% | 3min | 1.14126
+content.js:869 [Pocket Scout v6.0] 📝 Reasons: RSI overbought (60.4), MACD bullish (0.00011), Price at upper BB
+content.js:870 [Pocket Scout v6.0] 📊 Indicators: 9 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+content.js:1118 [Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: 2 | Failed: 4
+content.js:1052 [Pocket Scout v6.0] 🎯 Signal result: LOSS | SELL @ 1.14110 → 1.14126 (+0.014%) | WR: 28.6%
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (180.0s)
+content.js:813 [Pocket Scout v6.0] 🔄 Generating signal... (interval: 3 min)
+content.js:347 [Pocket Scout v6.0] 🌊 Market Regime: TRENDING
+content.js:385 [Pocket Scout v6.0] 📊 Trend: SIDEWAYS, Patterns: 2
+content.js:750 [Pocket Scout v6.0] 💰 Signal: SELL | Base: 51% | Regime: +15% | Final: 66%
+content.js:868 [Pocket Scout v6.0] ✅ Signal: SELL @ 66% | WR: 28.6% | 5min | 1.14216
+content.js:869 [Pocket Scout v6.0] 📝 Reasons: RSI overbought (84.9) +20%, MACD bullish (0.00018), Price at upper BB
+content.js:870 [Pocket Scout v6.0] 📊 Indicators: 10 active
+content.js:1007 [Pocket Scout v6.0] ⏰ Scheduled result check for SELL signal in 5 minutes
+content.js:902 [Pocket Scout v6.0] 📤 Published to Auto Trader: Object
+content.js:880 [Pocket Scout v6.0] ⏰ Next signal in 3 minute(s)
+content.js:1118 [Pocket Scout v6.0] 🎓 Learning: Pattern recorded | Successful: 2 | Failed: 5
+content.js:1052 [Pocket Scout v6.0] 🎯 Signal result: LOSS | SELL @ 1.14126 → 1.14216 (+0.079%) | WR: 25.0%
