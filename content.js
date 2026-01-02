@@ -887,6 +887,8 @@
       confidence: signal.confidence,
       entryPrice: signal.price,
       duration: signal.duration,
+      timestamp: signal.timestamp, // REQUIRED by Auto Trader for freshness check (<15s)
+      wr: signal.wr, // Win rate - REQUIRED by Auto Trader for v3.0 detection
       reasons: signal.reasons,
       volatility: signal.volatility,
       adxStrength: signal.adxStrength,
