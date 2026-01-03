@@ -62,24 +62,25 @@
   
   // Advanced Learning System with ALL 15 INDICATORS
   // v6.0: Complete indicator suite with per-indicator performance tracking
+  // Weights adjusted based on 319-signal performance data (2026-01-03)
   let learningData = {
     indicatorWeights: { 
-      rsi: 4.0,           // RSI (14)
-      williamsR: 3.5,     // Williams %R (14)
-      cci: 3.0,           // CCI (20)
-      ao: 2.5,            // Awesome Oscillator
-      bb: 2.0,            // Bollinger Bands (20,2)
-      stoch: 2.0,         // Stochastic (14,3,3)
-      macd: 1.5,          // MACD (12,26,9)
-      osma: 1.5,          // OsMA
-      momentum: 1.5,      // Momentum (10)
-      psar: 2.0,          // Parabolic SAR (0.02, 0.2)
-      stc: 1.8,           // Schaff Trend Cycle
-      vortex: 1.8,        // Vortex Indicator
-      aroon: 1.8,         // Aroon (25)
-      bears: 1.5,         // Bears Power (13)
-      bulls: 1.5,         // Bulls Power (13)
-      demarker: 1.5       // DeMarker (14)
+      rsi: 3.5,           // RSI (14) - reduced from 4.0, no data yet but likely mean-reversion
+      williamsR: 3.0,     // Williams %R (14) - reduced from 3.5, no data yet
+      cci: 2.5,           // CCI (20) - reduced from 3.0, no data yet
+      bulls: 2.2,         // Bulls Power (13) - INCREASED from 1.5 (55.9% WR!)
+      psar: 2.5,          // Parabolic SAR - INCREASED from 2.0 (54.4% WR)
+      vortex: 2.3,        // Vortex Indicator - INCREASED from 1.8 (53.8% WR)
+      momentum: 2.0,      // Momentum (10) - INCREASED from 1.5 (53.7% WR)
+      ao: 2.3,            // Awesome Oscillator - reduced from 2.5 (52.7% WR)
+      macd: 1.8,          // MACD (12,26,9) - increased from 1.5 (53.2% WR)
+      osma: 1.8,          // OsMA - increased from 1.5 (53.2% WR)
+      bb: 1.8,            // Bollinger Bands (20,2) - reduced from 2.0, no data yet
+      stoch: 1.8,         // Stochastic (14,3,3) - reduced from 2.0, no data yet
+      aroon: 1.7,         // Aroon (25) - reduced from 1.8 (51.4% WR)
+      bears: 1.5,         // Bears Power (13) - kept at 1.5 (52.6% WR)
+      stc: 0.8,           // Schaff Trend Cycle - DECREASED from 1.8 (43.9% WR)
+      demarker: 0.5       // DeMarker (14) - DECREASED from 1.5 (37.5% WR!)
     },
     // Per-indicator performance tracking for learning
     indicatorPerformance: {
@@ -264,47 +265,48 @@
   }
   
   // Adjust indicator weights based on market regime (v6.0: All 15 indicators)
+  // Updated 2026-01-03: TRENDING (53.4% WR) > RANGING (46.3% WR)
   function getRegimeAdjustedWeights(regime) {
     const baseWeights = { ...learningData.indicatorWeights };
     
     if (regime === 'TRENDING') {
-      // Boost trend-following indicators
-      baseWeights.macd *= 1.3;
-      baseWeights.osma *= 1.3;
-      baseWeights.ao *= 1.3;
-      baseWeights.momentum *= 1.4;
-      baseWeights.psar *= 1.4;
-      baseWeights.stc *= 1.3;
-      baseWeights.vortex *= 1.3;
-      baseWeights.aroon *= 1.3;
-      // Reduce mean-reversion
-      baseWeights.rsi *= 0.8;
-      baseWeights.williamsR *= 0.8;
-      baseWeights.cci *= 0.8;
-      baseWeights.stoch *= 0.8;
-      baseWeights.bb *= 0.9;
+      // TRENDING works best - boost trend-following aggressively
+      baseWeights.macd *= 1.5;
+      baseWeights.osma *= 1.5;
+      baseWeights.ao *= 1.4;
+      baseWeights.momentum *= 1.6;
+      baseWeights.psar *= 1.6;
+      baseWeights.stc *= 1.4;
+      baseWeights.vortex *= 1.5;
+      baseWeights.aroon *= 1.4;
+      // Reduce mean-reversion more aggressively
+      baseWeights.rsi *= 0.7;
+      baseWeights.williamsR *= 0.7;
+      baseWeights.cci *= 0.7;
+      baseWeights.stoch *= 0.7;
+      baseWeights.bb *= 0.8;
       baseWeights.bears *= 0.9;
-      baseWeights.bulls *= 0.9;
-      baseWeights.demarker *= 0.8;
+      baseWeights.bulls *= 1.1; // Bulls works well overall
+      baseWeights.demarker *= 0.6;
     } else if (regime === 'RANGING') {
-      // Boost mean-reversion indicators
-      baseWeights.rsi *= 1.5;
-      baseWeights.williamsR *= 1.5;
-      baseWeights.cci *= 1.4;
-      baseWeights.stoch *= 1.3;
-      baseWeights.bb *= 1.3;
-      baseWeights.demarker *= 1.3;
-      // Reduce trend-following
-      baseWeights.ao *= 0.7;
-      baseWeights.macd *= 0.6;
-      baseWeights.osma *= 0.6;
-      baseWeights.momentum *= 0.7;
-      baseWeights.psar *= 0.7;
-      baseWeights.stc *= 0.7;
-      baseWeights.vortex *= 0.7;
-      baseWeights.aroon *= 0.7;
-      baseWeights.bears *= 0.8;
-      baseWeights.bulls *= 0.8;
+      // RANGING underperforms - reduce mean-reversion boost
+      baseWeights.rsi *= 1.2; // Reduced from 1.5
+      baseWeights.williamsR *= 1.2; // Reduced from 1.5
+      baseWeights.cci *= 1.1; // Reduced from 1.4
+      baseWeights.stoch *= 1.1; // Reduced from 1.3
+      baseWeights.bb *= 1.1; // Reduced from 1.3
+      baseWeights.demarker *= 0.8; // Reduced from 1.3 (poor performer)
+      // Don't reduce trend-following as much
+      baseWeights.ao *= 0.8; // Changed from 0.7
+      baseWeights.macd *= 0.8; // Changed from 0.6
+      baseWeights.osma *= 0.8; // Changed from 0.6
+      baseWeights.momentum *= 0.9; // Changed from 0.7
+      baseWeights.psar *= 0.9; // Changed from 0.7
+      baseWeights.stc *= 0.8; // Changed from 0.7
+      baseWeights.vortex *= 0.9; // Changed from 0.7
+      baseWeights.aroon *= 0.8; // Changed from 0.7
+      baseWeights.bears *= 0.9;
+      baseWeights.bulls *= 1.0; // Bulls still good
     } else if (regime === 'VOLATILE') {
       // Be more conservative in volatile markets
       baseWeights.rsi *= 0.9;
@@ -317,12 +319,12 @@
       baseWeights.ao *= 0.9;
       baseWeights.momentum *= 0.8;
       baseWeights.psar *= 0.9;
-      baseWeights.stc *= 0.9;
+      baseWeights.stc *= 0.8;
       baseWeights.vortex *= 0.9;
       baseWeights.aroon *= 0.9;
       baseWeights.bears *= 0.9;
-      baseWeights.bulls *= 0.9;
-      baseWeights.demarker *= 0.9;
+      baseWeights.bulls *= 1.0;
+      baseWeights.demarker *= 0.8;
     }
     
     return baseWeights;
@@ -394,26 +396,30 @@
     // RSI vote - Use regime-adjusted weight with ENHANCED THRESHOLDS
     const rsiWeight = weights.rsi;
     totalWeight += rsiWeight;
-    let rsiBoost = 0; // Extra boost for extreme RSI values (RSI is only working indicator - 54.9% WR)
+    let rsiBoost = 0; // Extra boost for extreme RSI values
     
     if (rsi < 30) {
       const strength = (30 - rsi) / 30; // 0-1 range
       buyVotes += rsiWeight * strength;
       rsiBoost = 20; // Strong oversold boost
       reasons.push(`RSI oversold (${rsi.toFixed(1)}) +20%`);
+      indicatorSignals.rsi = 'BUY';
     } else if (rsi < 40) {
       const strength = (40 - rsi) / 40; // 0-1 range
       buyVotes += rsiWeight * strength;
       reasons.push(`RSI oversold (${rsi.toFixed(1)})`);
+      indicatorSignals.rsi = 'BUY';
     } else if (rsi > 70) {
       const strength = (rsi - 70) / 30; // 0-1 range
       sellVotes += rsiWeight * strength;
       rsiBoost = 20; // Strong overbought boost
       reasons.push(`RSI overbought (${rsi.toFixed(1)}) +20%`);
+      indicatorSignals.rsi = 'SELL';
     } else if (rsi > 60) {
       const strength = (rsi - 60) / 40; // 0-1 range
       sellVotes += rsiWeight * strength;
       reasons.push(`RSI overbought (${rsi.toFixed(1)})`);
+      indicatorSignals.rsi = 'SELL';
     } else if (rsi > 40 && rsi < 60) {
       // Neutral zone - reduce confidence
       const neutralPenalty = -10;
@@ -443,9 +449,11 @@
     if (bbPosition < 0.2) {
       buyVotes += bbWeight * (0.2 - bbPosition) * 5; // Scale to 0-1
       reasons.push('Price at lower BB');
+      indicatorSignals.bb = 'BUY';
     } else if (bbPosition > 0.8) {
       sellVotes += bbWeight * (bbPosition - 0.8) * 5; // Scale to 0-1
       reasons.push('Price at upper BB');
+      indicatorSignals.bb = 'SELL';
     }
     
     // Stochastic vote - Use regime-adjusted weight
@@ -456,10 +464,12 @@
         const strength = (30 - stoch.k) / 30;
         buyVotes += stochWeight * strength;
         reasons.push(`Stochastic oversold (${stoch.k.toFixed(1)})`);
+        indicatorSignals.stoch = 'BUY';
       } else if (stoch.k > 70 && stoch.d > 70) {
         const strength = (stoch.k - 70) / 30;
         sellVotes += stochWeight * strength;
         reasons.push(`Stochastic overbought (${stoch.k.toFixed(1)})`);
+        indicatorSignals.stoch = 'SELL';
       }
     }
     
@@ -471,6 +481,7 @@
         const strength = ((-80) - williamsR) / 20; // 0-1 range
         buyVotes += williamsWeight * strength;
         reasons.push(`Williams %R oversold (${williamsR.toFixed(1)})`);
+        indicatorSignals.williamsR = 'BUY';
         
         // v4.0 RANGING STRATEGY: Extreme bonus
         if (currentMarketRegime === 'RANGING' && williamsR < -85) {
@@ -481,6 +492,7 @@
         const strength = (williamsR - (-20)) / 20; // 0-1 range
         sellVotes += williamsWeight * strength;
         reasons.push(`Williams %R overbought (${williamsR.toFixed(1)})`);
+        indicatorSignals.williamsR = 'SELL';
         
         // v4.0 RANGING STRATEGY: Extreme bonus
         if (currentMarketRegime === 'RANGING' && williamsR > -15) {
@@ -490,7 +502,7 @@
       }
     }
     
-    // v4.0 NEW: CCI vote - Commodity Channel Index (proven 58-62% WR in RANGING)
+    // v4.0 NEW: CCI vote - Commodity Channel Index
     if (cci) {
       const cciWeight = weights.cci;
       totalWeight += cciWeight;
@@ -498,6 +510,7 @@
         const strength = Math.min(1, ((-100) - cci) / 100); // 0-1 range
         buyVotes += cciWeight * strength;
         reasons.push(`CCI oversold (${cci.toFixed(1)})`);
+        indicatorSignals.cci = 'BUY';
         
         // v4.0 RANGING STRATEGY: Extreme bonus
         if (currentMarketRegime === 'RANGING' && cci < -150) {
@@ -508,6 +521,7 @@
         const strength = Math.min(1, (cci - 100) / 100); // 0-1 range
         sellVotes += cciWeight * strength;
         reasons.push(`CCI overbought (${cci.toFixed(1)})`);
+        indicatorSignals.cci = 'SELL';
         
         // v4.0 RANGING STRATEGY: Extreme bonus
         if (currentMarketRegime === 'RANGING' && cci > 150) {
