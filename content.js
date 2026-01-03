@@ -428,6 +428,52 @@
       reasons.push('Low volatility clustering: +5%');
     }
     
+    // v7: Pattern Recognition Analysis
+    let patternBoost = 0;
+    if (window.PatternRecognition) {
+      const patternAnalysis = window.PatternRecognition.analyzeAllPatterns(ohlcM1);
+      
+      if (patternAnalysis.patterns.length > 0) {
+        // Check if patterns align with our signal
+        patternAnalysis.patterns.forEach(pattern => {
+          if (pattern.direction === 'BULLISH' && action === 'BUY') {
+            patternBoost += pattern.confidence * 10;
+            reasons.push(`${pattern.type} (Bullish) +${(pattern.confidence * 10).toFixed(0)}%`);
+          } else if (pattern.direction === 'BEARISH' && action === 'SELL') {
+            patternBoost += pattern.confidence * 10;
+            reasons.push(`${pattern.type} (Bearish) +${(pattern.confidence * 10).toFixed(0)}%`);
+          } else if (pattern.direction === 'BULLISH' && action === 'SELL') {
+            patternBoost -= pattern.confidence * 5;
+            reasons.push(`Conflicting ${pattern.type} -${(pattern.confidence * 5).toFixed(0)}%`);
+          } else if (pattern.direction === 'BEARISH' && action === 'BUY') {
+            patternBoost -= pattern.confidence * 5;
+            reasons.push(`Conflicting ${pattern.type} -${(pattern.confidence * 5).toFixed(0)}%`);
+          }
+        });
+      }
+      
+      // Check support/resistance proximity
+      const sr = patternAnalysis.supportResistance;
+      if (sr.support.length > 0 || sr.resistance.length > 0) {
+        const nearSupport = sr.support.find(s => 
+          Math.abs(currentPrice - s.price) / currentPrice < 0.005
+        );
+        const nearResistance = sr.resistance.find(r => 
+          Math.abs(currentPrice - r.price) / currentPrice < 0.005
+        );
+        
+        if (nearSupport && action === 'BUY') {
+          patternBoost += 5 * nearSupport.strength;
+          reasons.push(`Near support +${(5 * nearSupport.strength).toFixed(0)}%`);
+        } else if (nearResistance && action === 'SELL') {
+          patternBoost += 5 * nearResistance.strength;
+          reasons.push(`Near resistance +${(5 * nearResistance.strength).toFixed(0)}%`);
+        }
+      }
+    }
+    
+    confidence += patternBoost;
+    
     // Ensure confidence is in reasonable range
     confidence = Math.max(30, Math.min(95, Math.round(confidence)));
     
@@ -448,7 +494,7 @@
       action,
       confidence,
       duration,
-      reasons: reasons.slice(0, 8),
+      reasons: reasons.slice(0, 10), // Increased to 10 for pattern info
       price: currentPrice,
       volatility: atrRatio,
       adxStrength: adx.adx,
@@ -1115,19 +1161,59 @@
   // Message handler for popup and result tracking
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'GET_METRICS') {
+      // v7: Include AI/HMM/RL stats
+      const aiStats = aiEngineReady && window.AIEngine ? window.AIEngine.getStats() : null;
+      const rlStats = rlEngineReady && window.RLEngine ? window.RLEngine.getPerformanceStats() : null;
+      
       sendResponse({
         metrics: {
           winRate: calculateWinRate(),
           totalSignals: totalSignals,
           wins: winningSignals,
           losses: losingSignals,
-          currentInterval: signalIntervalMinutes
+          currentInterval: signalIntervalMinutes,
+          regime: currentRegime,
+          aiStats: aiStats,
+          rlStats: rlStats
         },
         lastSignal: lastSignal,
         signalHistory: signalHistory.slice(0, 10),
         candles: ohlcM1.length,
         warmupComplete: warmupComplete
       });
+      return true;
+    }
+    
+    if (message.type === 'RESET_HISTORY') {
+      // v7: Reset all AI/RL learning data
+      console.log('[Pocket Scout v7] 🔄 Resetting all learning data...');
+      
+      // Reset stats
+      totalSignals = 0;
+      winningSignals = 0;
+      losingSignals = 0;
+      signalHistory = [];
+      
+      // Reset AI engines
+      if (aiEngineReady && window.AIEngine) {
+        window.AIEngine.reset();
+      }
+      if (rlEngineReady && window.RLEngine) {
+        window.RLEngine.reset();
+      }
+      if (hmmEngineReady && window.HMMEngine) {
+        window.HMMEngine.reset();
+      }
+      
+      // Clear localStorage
+      localStorage.removeItem('PS_V7_SIGNAL_HISTORY');
+      localStorage.removeItem('PS_V7_TRAINING_DATA');
+      localStorage.removeItem('PS_V7_Q_TABLE');
+      
+      saveSettings();
+      
+      console.log('[Pocket Scout v7] ✅ All learning data reset');
+      sendResponse({ success: true });
       return true;
     }
     
@@ -1163,6 +1249,7 @@
     const requiredDeps = [
       'CircularBuffer',
       'TechnicalIndicators',
+      'PatternRecognition',
       'CyclicDecisionEngine',
       'AIEngine',
       'HMMEngine',

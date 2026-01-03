@@ -20,6 +20,7 @@
       "js": [
         "circular-buffer.js",
         "technical-indicators.js",
+        "pattern-recognition.js",
         "ai-engine.js",
         "hmm-engine.js",
         "rl-engine.js",
