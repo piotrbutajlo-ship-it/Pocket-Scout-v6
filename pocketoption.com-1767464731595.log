@@ -1,0 +1,1748 @@
+bugsnag-7.min.js?ver=8.0.83:1 [STORE] OPTIONS
+bugsnag-7.min.js?ver=8.0.83:1 APP: Connecting
+bugsnag-7.min.js?ver=8.0.83:1 CHAT RESIZE EVENT
+bugsnag-7.min.js?ver=8.0.83:1 You navigate from the same website
+console.<computed> @ bugsnag-7.min.js?ver=8.0.83:1
+circular-buffer.js:89 [Pocket Scout Time] Circular Buffer loaded - 2000 candles capacity
+technical-indicators.js:387 [Pocket Scout Dynamic Time] Technical Indicators loaded - Enhanced for OTC trading
+pattern-recognition.js:388 [Pocket Scout v7] Pattern Recognition loaded - Chart patterns & S/R clustering
+ai-engine.js:279 [Pocket Scout v7] AI Engine loaded - TensorFlow.js Neural Network
+hmm-engine.js:280 [Pocket Scout v7] HMM Engine loaded - 4-state regime detection
+rl-engine.js:277 [Pocket Scout v7] RL Engine loaded - Q-Learning for adaptive strategies
+backtesting.js:276 [Pocket Scout v7] Backtesting Engine loaded - Historical validation & Monte Carlo
+cyclic-decision-engine.js:81 [Pocket Scout v3.0] Cyclic Decision Engine loaded - configurable intervals
+content.js:1240 [Pocket Scout v7] 🚀 Starting AI-Powered Trading System...
+content.js:64 [Pocket Scout v7] 🆕 First run detected - resetting old learning data
+content.js:72 [Pocket Scout v7] ✅ Fresh start initialized
+content.js:1291 [Pocket Scout v7] Content script loaded - by Claude Opus
+bugsnag-7.min.js?ver=8.0.83:1 CHAT: CONNECTED
+content.js:1266 [Pocket Scout v7] ✅ All dependencies loaded (including AI engines)
+bugsnag-7.min.js?ver=8.0.83:1 APP: [+] wss://demo-api-eu.po.market
+bugsnag-7.min.js?ver=8.0.83:1 COUNTERS: Success auth
+bugsnag-7.min.js?ver=8.0.83:1 CHAT: USER READY
+bugsnag-7.min.js?ver=8.0.83:1 APP: Success auth
+bugsnag-7.min.js?ver=8.0.83:1 
+    PixiJS 6.5.10 - ✰ Canvas ✰      http://www.pixijs.com/    ♥♥♥ 
+content.js:210 [Pocket Scout v7] ✅ Warmup complete! 50 candles
+content.js:237 [Pocket Scout v7] 🤖 Initializing AI engines...
+ai-engine.js:24 [AI Engine] TensorFlow.js not loaded. Loading from CDN...
+initialize @ ai-engine.js:24
+ai-engine.js:81 Loading the script 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js' violates the following Content Security Policy directive: "script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* chrome-extension://ce1f7ea9-d97d-4bf8-912f-38db0ad9a580/". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.
+(anonimowa) @ ai-engine.js:81
+cyclic-decision-engine.js:32 [CyclicDecisionEngine] Initializing - first signal in 3 minute(s)
+content.js:521 [Pocket Scout v7] 🔄 Generating signal... (interval: 3 min)
+cyclic-decision-engine.js:47 [CyclicDecisionEngine] Started - interval: 180s (3 min)
+content.js:540 [Pocket Scout v7] 🤖 AI/HMM/RL: SELL @ 70% | Regime: RANGING
+content.js:607 [Pocket Scout v7] ✅ AI Signal: SELL @ 70% | WR: 0.0% | 3min | 1.13953
+content.js:608 [Pocket Scout v7] 📝 Reasons: Fallback: Overbought indicators, Regime RANGING: +20%, Duration: 3min (normal)
+content.js:738 [Pocket Scout v7] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+ai-engine.js:78 [AI Engine] Failed to load TensorFlow.js
+script.onerror @ ai-engine.js:78
+ai-engine.js:56 [AI Engine] ❌ Failed to initialize: Error: Failed to load TensorFlow.js
+    at script.onerror (ai-engine.js:79:16)
+initialize @ ai-engine.js:56
+rl-engine.js:260 [RL Engine] ✅ Initialized with Q-Learning
+content.js:252 [Pocket Scout v7] ✅ RL Engine ready
+content.js:259 [Pocket Scout v7] ✅ HMM Engine ready
+content.js:262 [Pocket Scout v7] 🚀 All AI engines initialized
+content.js:937 Uncaught (in promise) ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at generateSignal (content.js:613:5)
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (180.1s)
+content.js:521 [Pocket Scout v7] 🔄 Generating signal... (interval: 3 min)
+content.js:349 [Pocket Scout v7] 🌊 Regime: RANGING (95.5%)
+rl-engine.js:85 [RL Engine] 📊 Q-table: SELL (BUY: 0.500, SELL: 0.500)
+content.js:540 [Pocket Scout v7] 🤖 AI/HMM/RL: SELL @ 87% | Regime: RANGING
+content.js:607 [Pocket Scout v7] ✅ AI Signal: SELL @ 87% | WR: 0.0% | 3min | 1.13952
+content.js:608 [Pocket Scout v7] 📝 Reasons: RL Q-Learning: SELL, Regime RANGING: +20%, Low volatility clustering: +5%
+content.js:738 [Pocket Scout v7] ⏰ Scheduled result check for SELL signal in 3 minutes
+rl-engine.js:130 [RL Engine] 🎓 Q-update: RANGING SELL | Reward: +1 | Q: 0.500 → 0.595
+content.js:724 [Pocket Scout v7] ✅ Signal verified | Action: SELL | Result: WIN | Entry: 1.13953 → Exit: 1.13952 📉 -0.00%
+content.js:725 [Pocket Scout v7] 📊 Stats: 1W / 0L | WR: 50.0%
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at checkSignalResult (content.js:727:5)
+    at content.js:735:7
+content.js:937 Uncaught (in promise) ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at generateSignal (content.js:613:5)
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+rl-engine.js:130 [RL Engine] 🎓 Q-update: RANGING SELL | Reward: +1 | Q: 0.595 → 0.689
+content.js:724 [Pocket Scout v7] ✅ Signal verified | Action: SELL | Result: WIN | Entry: 1.13952 → Exit: 1.13902 📉 -0.04%
+content.js:725 [Pocket Scout v7] 📊 Stats: 2W / 0L | WR: 100.0%
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at checkSignalResult (content.js:727:5)
+    at content.js:735:7
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+cyclic-decision-engine.js:41 [CyclicDecisionEngine] Cycle triggered (181.0s)
+content.js:521 [Pocket Scout v7] 🔄 Generating signal... (interval: 3 min)
+content.js:349 [Pocket Scout v7] 🌊 Regime: RANGING (95.5%)
+rl-engine.js:85 [RL Engine] 📊 Q-table: SELL (BUY: 0.500, SELL: 0.689)
+content.js:540 [Pocket Scout v7] 🤖 AI/HMM/RL: SELL @ 75% | Regime: RANGING
+content.js:607 [Pocket Scout v7] ✅ AI Signal: SELL @ 75% | WR: 100.0% | 3min | 1.13905
+content.js:608 [Pocket Scout v7] 📝 Reasons: RL Q-Learning: SELL, Regime RANGING: +20%, Duration: 3min (normal)
+content.js:738 [Pocket Scout v7] ⏰ Scheduled result check for SELL signal in 3 minutes
+content.js:937 Uncaught (in promise) ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at generateSignal (content.js:613:5)
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
+content.js:937 Uncaught ReferenceError: learningData is not defined
+    at updateAnalyticsDisplay (content.js:937:29)
+    at updateUI (content.js:777:5)
+    at content.js:1152:9
+updateAnalyticsDisplay @ content.js:937
+updateUI @ content.js:777
+(anonimowa) @ content.js:1152
