@@ -385,6 +385,8 @@
         if (rlAction !== action) {
           console.log(`[Pocket Scout v7] 🎲 RL override: ${action} → ${rlAction}`);
           action = rlAction;
+          // Reset confidence to moderate level when RL overrides AI
+          confidence = 60;
           reasons.push(`RL Q-Learning override: ${rlAction}`);
         }
         
