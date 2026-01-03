@@ -737,8 +737,6 @@
     
     console.log(`[Pocket Scout v7] ⏰ Scheduled result check for ${signal.action} signal in ${signal.duration} minutes`);
   }
-  
-  }
 
   // Update status display
   function updateStatusDisplay() {
