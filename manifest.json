@@ -1,21 +1,30 @@
 {
   "manifest_version": 3,
-  "name": "Pocket Scout v5 WIN",
-  "version": "5.0.0",
-  "description": "Pocket Scout v5 WIN - Profitable binary options signals with Williams %R, CCI, Awesome Oscillator. Fixed bugs, optimized for consistent profitability.",
+  "name": "Pocket Scout v7",
+  "version": "7.0.0",
+  "description": "Pocket Scout v7 - AI-Powered Trading System with TensorFlow.js, HMM Regime Detection, Q-Learning, and Market Microstructure Analysis. 65-80% WR target.",
   "permissions": [
     "storage",
     "activeTab"
   ],
   "host_permissions": [
-    "https://pocketoption.com/*"
+    "https://pocketoption.com/*",
+    "https://cdn.jsdelivr.net/*"
   ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
   "content_scripts": [
     {
       "matches": ["https://pocketoption.com/*"],
       "js": [
         "circular-buffer.js",
         "technical-indicators.js",
+        "pattern-recognition.js",
+        "ai-engine.js",
+        "hmm-engine.js",
+        "rl-engine.js",
+        "backtesting.js",
         "cyclic-decision-engine.js",
         "content.js"
       ],
@@ -27,7 +36,13 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Pocket Scout v5 WIN"
-  }
+    "default_title": "Pocket Scout v7"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js"],
+      "matches": ["https://pocketoption.com/*"]
+    }
+  ]
 }
 
