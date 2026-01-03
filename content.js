@@ -927,59 +927,81 @@
     }
   }
   
-  // Update analytics display
+  // v7: Update analytics display
   function updateAnalyticsDisplay() {
     const analyticsContent = document.getElementById('ps-analytics-content');
     if (!analyticsContent) return;
     
-    // Calculate indicator effectiveness
-    let topIndicators = [];
-    if (totalSignals > 0 && learningData.successfulPatterns.length > 0) {
-      const indicatorWRs = {
-        RSI: 0,
-        MACD: 0,
-        EMA: 0,
-        BB: 0,
-        Stoch: 0
-      };
-      
-      // Count successful patterns for each indicator
-      learningData.successfulPatterns.forEach(pattern => {
-        if (pattern.rsi < 40 || pattern.rsi > 60) indicatorWRs.RSI++;
-        if (Math.abs(pattern.macd) > 0.0001) indicatorWRs.MACD++;
-        if (pattern.ema9 && pattern.ema21) indicatorWRs.EMA++;
-      });
-      
-      topIndicators = Object.entries(indicatorWRs)
-        .map(([name, count]) => ({ name, wr: winningSignals > 0 ? (count / winningSignals * 100).toFixed(1) : 0 }))
-        .sort((a, b) => b.wr - a.wr)
-        .slice(0, 3);
-    }
+    const wr = calculateWinRate();
+    const wrColor = wr >= 65 ? '#10b981' : wr >= 55 ? '#f59e0b' : '#ef4444';
     
-    // Remove Best Hour tracking per user request (market too volatile for time patterns)
-    
-    analyticsContent.innerHTML = `
-      <div style="margin-bottom:8px;">
-        <div>
-          <div style="opacity:0.7; margin-bottom:2px;">Market Regime:</div>
-          <div style="font-weight:700; color:#3b82f6;">${currentMarketRegime}</div>
+    // v7: Show AI/RL/HMM stats instead of old indicator weights
+    let statsHtml = `
+      <div style="margin-bottom:6px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="opacity:0.7;">Win Rate:</span>
+          <div style="font-weight:700; color:${wrColor};">${wr.toFixed(1)}%</div>
         </div>
       </div>
-      ${topIndicators.length > 0 ? `
-        <div style="margin-bottom:6px;">
-          <div style="opacity:0.7; margin-bottom:3px;">Top Indicators:</div>
-          <div style="display:flex; gap:4px; flex-wrap:wrap;">
-            ${topIndicators.map(ind => 
-              `<span style="background:#3b82f6; color:#fff; padding:2px 6px; border-radius:3px; font-size:9px;">${ind.name} ${ind.wr}%</span>`
-            ).join('')}
-          </div>
+      <div style="margin-bottom:6px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="opacity:0.7;">Signals:</span>
+          <div style="font-weight:700; color:#60a5fa;">${totalSignals} (${winningSignals}W / ${losingSignals}L)</div>
         </div>
-      ` : ''}
-      <div style="margin-top:6px;">
-        <div style="opacity:0.7; margin-bottom:2px;">Patterns Analyzed:</div>
-        <div style="font-weight:700; color:#10b981;">${learningData.successfulPatterns.length + learningData.failedPatterns.length}</div>
       </div>
     `;
+    
+    // Show AI Engine stats
+    if (aiEngineReady && window.AIEngine) {
+      const aiStats = window.AIEngine.getStats();
+      statsHtml += `
+        <div style="margin-bottom:6px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="opacity:0.7;">AI Training:</span>
+            <div style="font-weight:700; color:#3b82f6;">${aiStats.trainingDataCount} samples</div>
+          </div>
+        </div>
+      `;
+    }
+    
+    // Show current regime
+    if (currentRegime) {
+      const regimeColor = currentRegime === 'RANGING' ? '#10b981' : 
+                          currentRegime === 'TRENDING' ? '#3b82f6' : 
+                          currentRegime === 'VOLATILE' ? '#f59e0b' : '#ef4444';
+      statsHtml += `
+        <div style="margin-bottom:6px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="opacity:0.7;">Regime:</span>
+            <div style="font-weight:700; color:${regimeColor};">${currentRegime}</div>
+          </div>
+        </div>
+      `;
+    }
+    
+    // Show signal history
+    if (signalHistory.length > 0) {
+      statsHtml += `
+        <div style="margin-top:8px; padding-top:8px; border-top:1px solid #334155;">
+          <div style="opacity:0.7; margin-bottom:4px;">Last 5 Signals:</div>
+      `;
+      
+      signalHistory.slice(0, 5).forEach(signal => {
+        const resultIcon = signal.result === 'WIN' ? '✅' : 
+                          signal.result === 'LOSS' ? '❌' : '⏳';
+        const actionColor = signal.action === 'BUY' ? '#10b981' : '#ef4444';
+        statsHtml += `
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:9px; margin-bottom:2px;">
+            <span style="color:${actionColor};">${signal.action} ${signal.confidence}%</span>
+            <span>${resultIcon}</span>
+          </div>
+        `;
+      });
+      
+      statsHtml += `</div>`;
+    }
+    
+    analyticsContent.innerHTML = statsHtml;
   }
 
   // Make panel draggable
@@ -1163,7 +1185,7 @@
     if (message.type === 'GET_METRICS') {
       // v7: Include AI/HMM/RL stats
       const aiStats = aiEngineReady && window.AIEngine ? window.AIEngine.getStats() : null;
-      const rlStats = rlEngineReady && window.RLEngine ? window.RLEngine.getPerformanceStats() : null;
+      const rlStats = rlEngineReady && window.RLEngine ? window.RLEngine.getStats() : null;
       
       sendResponse({
         metrics: {
@@ -1174,7 +1196,10 @@
           currentInterval: signalIntervalMinutes,
           regime: currentRegime,
           aiStats: aiStats,
-          rlStats: rlStats
+          rlStats: rlStats ? {
+            totalUpdates: rlStats.totalUpdates,
+            winRate: rlStats.performance.winRate
+          } : null
         },
         lastSignal: lastSignal,
         signalHistory: signalHistory.slice(0, 10),

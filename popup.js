@@ -67,7 +67,7 @@ function updateMetrics() {
           <div class="metric">
             <div class="metric-label">🎯 RL Q-Learning</div>
             <div class="metric-value" style="font-size:11px;">
-              ${m.rlStats.totalUpdates} updates<br/>
+              ${m.rlStats.totalUpdates || 0} updates<br/>
               WR: ${m.rlStats.winRate ? m.rlStats.winRate.toFixed(1) + '%' : 'N/A'}
             </div>
           </div>
