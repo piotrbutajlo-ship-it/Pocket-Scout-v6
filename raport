@@ -1,0 +1,2954 @@
+{
+    "indicatorWeights": {
+        "rsi": 4,
+        "williamsR": 3.5,
+        "cci": 3,
+        "ao": 2.5,
+        "bb": 2,
+        "stoch": 2,
+        "macd": 1.5,
+        "osma": 1.5,
+        "momentum": 1.35,
+        "psar": 1.8,
+        "stc": 0.6276211921800003,
+        "vortex": 1.9800000000000002,
+        "aroon": 1.8,
+        "bears": 1.215,
+        "bulls": 1.6500000000000001,
+        "demarker": 0.6457008150000002
+    },
+    "indicatorPerformance": {
+        "rsi": {
+            "wins": 0,
+            "losses": 0,
+            "wr": 0
+        },
+        "williamsR": {
+            "wins": 0,
+            "losses": 0,
+            "wr": 0
+        },
+        "cci": {
+            "wins": 0,
+            "losses": 0,
+            "wr": 0
+        },
+        "ao": {
+            "wins": 137,
+            "losses": 123,
+            "wr": 52.69230769230769
+        },
+        "bb": {
+            "wins": 0,
+            "losses": 0,
+            "wr": 0
+        },
+        "stoch": {
+            "wins": 0,
+            "losses": 0,
+            "wr": 0
+        },
+        "macd": {
+            "wins": 101,
+            "losses": 89,
+            "wr": 53.1578947368421
+        },
+        "osma": {
+            "wins": 101,
+            "losses": 89,
+            "wr": 53.1578947368421
+        },
+        "momentum": {
+            "wins": 117,
+            "losses": 101,
+            "wr": 53.669724770642205
+        },
+        "psar": {
+            "wins": 117,
+            "losses": 98,
+            "wr": 54.418604651162795
+        },
+        "stc": {
+            "wins": 36,
+            "losses": 46,
+            "wr": 43.90243902439025
+        },
+        "vortex": {
+            "wins": 133,
+            "losses": 114,
+            "wr": 53.84615384615385
+        },
+        "aroon": {
+            "wins": 131,
+            "losses": 124,
+            "wr": 51.37254901960784
+        },
+        "bears": {
+            "wins": 61,
+            "losses": 55,
+            "wr": 52.58620689655172
+        },
+        "bulls": {
+            "wins": 57,
+            "losses": 45,
+            "wr": 55.88235294117647
+        },
+        "demarker": {
+            "wins": 6,
+            "losses": 10,
+            "wr": 37.5
+        }
+    },
+    "successfulPatterns": [
+        {
+            "action": "SELL",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 14.310789044740247,
+            "volatility": 0.00034689687594944684,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 59,
+            "regime": "RANGING",
+            "adxStrength": 0.8892249084464718,
+            "volatility": 0.00031065499664446455,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 13.907956379271663,
+            "volatility": 0.0003507920847823246,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 11.57926933670673,
+            "volatility": 0.0003107046744582543,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 9.403973400631402,
+            "volatility": 0.0003617950423600048,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 51,
+            "regime": "RANGING",
+            "adxStrength": 1.6228128792138368,
+            "volatility": 0.0003536963451377847,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 12.565726714601208,
+            "volatility": 0.00027695054742333516,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 5.033211594478163,
+            "volatility": 0.0002700759524683754,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 0.6710499464782201,
+            "volatility": 0.0003176394880425156,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 15.121510124642795,
+            "volatility": 0.00031019429522108046,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 27.388175126326413,
+            "volatility": 0.0003015009503834237,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 43.31520392832497,
+            "volatility": 0.0003191414482988497,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 43.8240458963662,
+            "volatility": 0.0002948629071770702,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 35.76518480268185,
+            "volatility": 0.00025619701525475444,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 46,
+            "regime": "TRENDING",
+            "adxStrength": 21.369400383633895,
+            "volatility": 0.00025814366701390495,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 45,
+            "regime": "TRENDING",
+            "adxStrength": 25.120643830677515,
+            "volatility": 0.00022819870818272482,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 38.98453225843789,
+            "volatility": 0.0003058110095465605,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 48,
+            "regime": "TRENDING",
+            "adxStrength": 22.36456313186955,
+            "volatility": 0.000311528077750401,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 2.0978149768834506,
+            "volatility": 0.0003153274083896917,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 63,
+            "regime": "TRENDING",
+            "adxStrength": 39.57890679197925,
+            "volatility": 0.00030831658021500966,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 43.26164115246798,
+            "volatility": 0.0002870095177733534,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "TRENDING",
+            "adxStrength": 29.975983568335963,
+            "volatility": 0.0002938567434620858,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 46,
+            "regime": "TRENDING",
+            "adxStrength": 40.41505836574362,
+            "volatility": 0.00029257030830224276,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 62.02617383661458,
+            "volatility": 0.0003224014459080073,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 52,
+            "regime": "RANGING",
+            "adxStrength": 10.107286431656343,
+            "volatility": 0.00032852352409559315,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 48,
+            "regime": "TRENDING",
+            "adxStrength": 22.87052136861476,
+            "volatility": 0.0003322827078767313,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 52.93994211117615,
+            "volatility": 0.0003296589472154184,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 44,
+            "regime": "TRENDING",
+            "adxStrength": 35.39950552729306,
+            "volatility": 0.0003158599327243352,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 38,
+            "regime": "TRENDING",
+            "adxStrength": 31.95842376973173,
+            "volatility": 0.00031325843877359457,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 70,
+            "regime": "TRENDING",
+            "adxStrength": 56.73856275306748,
+            "volatility": 0.00029444688153305767,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 19.88639276718066,
+            "volatility": 0.00030065916715412143,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 15.023307340596165,
+            "volatility": 0.00030376530506207294,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 64,
+            "regime": "TRENDING",
+            "adxStrength": 48.837562331972876,
+            "volatility": 0.00033738818637450387,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 58,
+            "regime": "TRENDING",
+            "adxStrength": 28.39408630172317,
+            "volatility": 0.0003285775013320723,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 69,
+            "regime": "TRENDING",
+            "adxStrength": 46.01564451234192,
+            "volatility": 0.00033808370041715655,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 28.712923682401236,
+            "volatility": 0.0003325622630805744,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 67,
+            "regime": "TRENDING",
+            "adxStrength": 56.28566625978798,
+            "volatility": 0.0003351817430936098,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 46.18092977471764,
+            "volatility": 0.00035027151037012174,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 60,
+            "regime": "RANGING",
+            "adxStrength": 18.200392479255232,
+            "volatility": 0.0003317885276149719,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 7.003782263677088,
+            "volatility": 0.00033368668295187586,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 14.580478842371914,
+            "volatility": 0.00035868303836023935,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 44,
+            "regime": "TRENDING",
+            "adxStrength": 20.413801137872984,
+            "volatility": 0.0003855584188805817,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 43,
+            "regime": "RANGING",
+            "adxStrength": 14.6596765127847,
+            "volatility": 0.0003305314802493219,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 41,
+            "regime": "RANGING",
+            "adxStrength": 1.44465044831806,
+            "volatility": 0.00031734537346674897,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 66,
+            "regime": "RANGING",
+            "adxStrength": 5.845615966497164,
+            "volatility": 0.00030543902581313403,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 40.26868586271111,
+            "volatility": 0.0003092133780324425,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 10.969480828248638,
+            "volatility": 0.00031169612538606105,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "TRENDING",
+            "adxStrength": 21.810465521434327,
+            "volatility": 0.0002954219897015152,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 56,
+            "regime": "TRENDING",
+            "adxStrength": 20.045714284613506,
+            "volatility": 0.0002942087352885528,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 43,
+            "regime": "RANGING",
+            "adxStrength": 19.51088770218001,
+            "volatility": 0.00030559375303881105,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 44,
+            "regime": "RANGING",
+            "adxStrength": 16.47057520385584,
+            "volatility": 0.00028068041683982026,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "TRENDING",
+            "adxStrength": 20.137637489415518,
+            "volatility": 0.0003044987977924731,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 51,
+            "regime": "RANGING",
+            "adxStrength": 12.384950120418207,
+            "volatility": 0.0003107464435945099,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 1.4651582121410227,
+            "volatility": 0.0003076187408339641,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 59,
+            "regime": "TRENDING",
+            "adxStrength": 32.985235361467275,
+            "volatility": 0.0003144538689609727,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 25.839190796548678,
+            "volatility": 0.0003087781374077539,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 34.014713149367374,
+            "volatility": 0.00032058941457497334,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 12.214625843442523,
+            "volatility": 0.0003354853123031097,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 13.362951941052126,
+            "volatility": 0.000344723294920193,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 57,
+            "regime": "RANGING",
+            "adxStrength": 13.744413517236765,
+            "volatility": 0.00032090340426691024,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 53,
+            "regime": "RANGING",
+            "adxStrength": 4.990126978590485,
+            "volatility": 0.00034524395855847686,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 3.565126511753357,
+            "volatility": 0.00034586373505739746,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 1.1990166254524641,
+            "volatility": 0.0003071060980410023,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 11.917773215833458,
+            "volatility": 0.000306439186020144,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 42.05627809783758,
+            "volatility": 0.0002981377740809113,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 48,
+            "regime": "TRENDING",
+            "adxStrength": 33.29569733174995,
+            "volatility": 0.0002662807778017865,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 77,
+            "regime": "RANGING",
+            "adxStrength": 13.024577102819801,
+            "volatility": 0.0002792178584252327,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 1.799869610870904,
+            "volatility": 0.00036851796540669226,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 25.43125205630952,
+            "volatility": 0.00032512008850253774,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 58,
+            "regime": "RANGING",
+            "adxStrength": 9.395000741853858,
+            "volatility": 0.0002908755159529094,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 8.779421647008837,
+            "volatility": 0.00030960641284764445,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 16.79802926976263,
+            "volatility": 0.0002821192624228559,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 43.13966465250124,
+            "volatility": 0.000296484992522595,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 74,
+            "regime": "TRENDING",
+            "adxStrength": 50.99752551301878,
+            "volatility": 0.0002871405000938509,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 74,
+            "regime": "TRENDING",
+            "adxStrength": 64.90609249713692,
+            "volatility": 0.0002909533185379823,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 73,
+            "regime": "TRENDING",
+            "adxStrength": 66.70421866113163,
+            "volatility": 0.00028602341582524993,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 65,
+            "regime": "TRENDING",
+            "adxStrength": 64.45001173371068,
+            "volatility": 0.00028546093132970213,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 51,
+            "regime": "TRENDING",
+            "adxStrength": 42.93831599297923,
+            "volatility": 0.0003463377749798666,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 56,
+            "regime": "TRENDING",
+            "adxStrength": 46.60220441750813,
+            "volatility": 0.00035513273085815235,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 7.318805092547359,
+            "volatility": 0.0003446016401912689,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 41,
+            "regime": "TRENDING",
+            "adxStrength": 22.86481828418061,
+            "volatility": 0.0003702924616148622,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 20.905615848567876,
+            "volatility": 0.00039229863348685045,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 0.642936682880512,
+            "volatility": 0.00037858765777951434,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 6.144734115688628,
+            "volatility": 0.0003540262068212065,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "RANGING",
+            "adxStrength": 7.823977708823097,
+            "volatility": 0.0003426894001478259,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 61,
+            "regime": "TRENDING",
+            "adxStrength": 23.523168260195458,
+            "volatility": 0.00034449094273290756,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 35.99911211242036,
+            "volatility": 0.00035316475310753136,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 43.561341981608855,
+            "volatility": 0.00031186221364925735,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 44,
+            "regime": "TRENDING",
+            "adxStrength": 34.27973047742536,
+            "volatility": 0.00031118659573116045,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 20.5439345724825,
+            "volatility": 0.0003310070408320622,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 43.9234224357888,
+            "volatility": 0.0003591363763239651,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 22.15990231175741,
+            "volatility": 0.00039219668488884186,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 59,
+            "regime": "TRENDING",
+            "adxStrength": 35.956096872605045,
+            "volatility": 0.00040647243985740496,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 23.097294296542596,
+            "volatility": 0.00039453228197973336,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 37.1464205206567,
+            "volatility": 0.00036760139775909157,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 71,
+            "regime": "TRENDING",
+            "adxStrength": 60.86407674237297,
+            "volatility": 0.00037184833579153714,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 63,
+            "regime": "TRENDING",
+            "adxStrength": 46.93228242243076,
+            "volatility": 0.00036616297321341714,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 33.3582934110819,
+            "volatility": 0.000324772371034678,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 24.85993187358263,
+            "volatility": 0.0003254836487490344,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 13.15002217460271,
+            "volatility": 0.00031311168269585187,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 26.816998677704834,
+            "volatility": 0.00033420915669490035,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 23.42238293930086,
+            "volatility": 0.0002992101599801731,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 41,
+            "regime": "TRENDING",
+            "adxStrength": 21.455195959706106,
+            "volatility": 0.0002454175895520686,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 64,
+            "regime": "RANGING",
+            "adxStrength": 19.161964803207375,
+            "volatility": 0.0002529021613105883,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 50,
+            "regime": "RANGING",
+            "adxStrength": 0.4492019310095287,
+            "volatility": 0.00028350024228367186,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 2.902812802173651,
+            "volatility": 0.0002941135967656374,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 1.8897732920200725,
+            "volatility": 0.00030159487607754284,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 48.648793947316385,
+            "volatility": 0.0003129008847802207,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 53,
+            "regime": "TRENDING",
+            "adxStrength": 24.58042125912877,
+            "volatility": 0.00032914683084274795,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 59,
+            "regime": "TRENDING",
+            "adxStrength": 41.3444965249204,
+            "volatility": 0.00033483896552840035,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 40.97104121525001,
+            "volatility": 0.00031370897623664426,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 56,
+            "regime": "TRENDING",
+            "adxStrength": 36.52175254662537,
+            "volatility": 0.000316291915853133,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 17.508257734574876,
+            "volatility": 0.0003406958581866468,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 35.31845204522508,
+            "volatility": 0.00035869350475928265,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 68,
+            "regime": "TRENDING",
+            "adxStrength": 38.10752622732279,
+            "volatility": 0.0003355086307724364,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 69,
+            "regime": "TRENDING",
+            "adxStrength": 38.86494339099053,
+            "volatility": 0.00034041171487638605,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 78,
+            "regime": "TRENDING",
+            "adxStrength": 49.80214005438883,
+            "volatility": 0.0003870737560627561,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 68,
+            "regime": "TRENDING",
+            "adxStrength": 49.00717421061644,
+            "volatility": 0.0003726885829158755,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 73,
+            "regime": "TRENDING",
+            "adxStrength": 61.3155666614564,
+            "volatility": 0.0003663562814837634,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 42.08677331521002,
+            "volatility": 0.0003120307471735034,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 45,
+            "regime": "TRENDING",
+            "adxStrength": 38.312898481852095,
+            "volatility": 0.00026279884884139584,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 38.30722183674717,
+            "volatility": 0.0002640114257171316,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 10.802693266565926,
+            "volatility": 0.00031127968635459525,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 53,
+            "regime": "TRENDING",
+            "adxStrength": 38.210329827199146,
+            "volatility": 0.0003274361216324374,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 31.956375254722413,
+            "volatility": 0.0003280147433601997,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 27.383433949168772,
+            "volatility": 0.00029737784287464517,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 41,
+            "regime": "TRENDING",
+            "adxStrength": 34.09056929540497,
+            "volatility": 0.0003054000893559729,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 19.83685733447834,
+            "volatility": 0.00034003747996292906,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 15.858271924572845,
+            "volatility": 0.0002691549764517196,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 4.475337281122371,
+            "volatility": 0.0002225305326808758,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 0.7260617014608995,
+            "volatility": 0.00020142307891962208,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 41,
+            "regime": "RANGING",
+            "adxStrength": 16.992497020397245,
+            "volatility": 0.00022818514283426598,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 25.1749103149741,
+            "volatility": 0.000285434696521359,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 64,
+            "regime": "TRENDING",
+            "adxStrength": 47.31605064870187,
+            "volatility": 0.0002979341902559131,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 63,
+            "regime": "TRENDING",
+            "adxStrength": 47.316050648701875,
+            "volatility": 0.0002674764942589746,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 15.406392819270248,
+            "volatility": 0.00034893170618601903,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 27.040315844764823,
+            "volatility": 0.00034149058011370524,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 24.429924470235107,
+            "volatility": 0.0003202895417457529,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 64,
+            "regime": "TRENDING",
+            "adxStrength": 46.17193290541009,
+            "volatility": 0.00031536428516993053,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 32.31874157045891,
+            "volatility": 0.0002985792323183765,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 45,
+            "regime": "TRENDING",
+            "adxStrength": 24.9883107688884,
+            "volatility": 0.0003148991102065834,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 32.41694568890567,
+            "volatility": 0.0002986653416027211,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "TRENDING",
+            "adxStrength": 23.257213955978468,
+            "volatility": 0.0003155977618858816,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 47.56729540481365,
+            "volatility": 0.0003357056112315816,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 61,
+            "regime": "TRENDING",
+            "adxStrength": 53.046749543544315,
+            "volatility": 0.00034958879461405816,
+            "duration": 5,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 44,
+            "regime": "TRENDING",
+            "adxStrength": 22.88233994925001,
+            "volatility": 0.0003634295619620825,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 16.737233200854465,
+            "volatility": 0.00034288161470036197,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 54,
+            "regime": "RANGING",
+            "adxStrength": 2.0590322620554815,
+            "volatility": 0.00034544490764990585,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 17.93200620281617,
+            "volatility": 0.0003278737033002151,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 27.614572150354018,
+            "volatility": 0.0003134689521227727,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 2.0949153086431833,
+            "volatility": 0.00031593344510941196,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 7.974618747673784,
+            "volatility": 0.00030714942951382104,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 45,
+            "regime": "RANGING",
+            "adxStrength": 18.893648471527904,
+            "volatility": 0.0003208276149361806,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 41,
+            "regime": "RANGING",
+            "adxStrength": 14.76750404324019,
+            "volatility": 0.00035398906518379285,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 0.5909424986382055,
+            "volatility": 0.00034583811706182904,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "SELL",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 13.336380717530123,
+            "volatility": 0.0003126390899358479,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 51,
+            "regime": "TRENDING",
+            "adxStrength": 26.15627778261108,
+            "volatility": 0.0002864359538922218,
+            "duration": 3,
+            "result": "WIN"
+        },
+        {
+            "action": "BUY",
+            "confidence": 64,
+            "regime": "TRENDING",
+            "adxStrength": 42.57012560873198,
+            "volatility": 0.00030204290036883367,
+            "duration": 5,
+            "result": "WIN"
+        }
+    ],
+    "failedPatterns": [
+        {
+            "action": "SELL",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 32.374219900312056,
+            "volatility": 0.0003763840018637628,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 19.148569732184033,
+            "volatility": 0.00030003977562786607,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 50,
+            "regime": "RANGING",
+            "adxStrength": 0.20511291439068344,
+            "volatility": 0.00027682094319533216,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 60,
+            "regime": "RANGING",
+            "adxStrength": 5.1036124273818695,
+            "volatility": 0.0002918294273279385,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 51,
+            "regime": "RANGING",
+            "adxStrength": 14.98388854684563,
+            "volatility": 0.00031496232599738155,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 66,
+            "regime": "TRENDING",
+            "adxStrength": 42.873552921287825,
+            "volatility": 0.0003036182468180977,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 64,
+            "regime": "TRENDING",
+            "adxStrength": 54.65766885687526,
+            "volatility": 0.00032420293175836116,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "TRENDING",
+            "adxStrength": 39.41050739655109,
+            "volatility": 0.00032474017032152827,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 51.40246999838543,
+            "volatility": 0.00039651196851084894,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 52.015259025074776,
+            "volatility": 0.000383925399362002,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 1.6988554356317118,
+            "volatility": 0.000321385590006204,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 41,
+            "regime": "RANGING",
+            "adxStrength": 19.908720094013873,
+            "volatility": 0.00037864979098782564,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 11.616669721909423,
+            "volatility": 0.00035180972732691014,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 53,
+            "regime": "RANGING",
+            "adxStrength": 9.451051926355799,
+            "volatility": 0.00029194111522752353,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 62,
+            "regime": "RANGING",
+            "adxStrength": 12.564798929597604,
+            "volatility": 0.0002794900180576639,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 41,
+            "regime": "RANGING",
+            "adxStrength": 16.8421331327536,
+            "volatility": 0.0002938778505137309,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 45,
+            "regime": "TRENDING",
+            "adxStrength": 21.250734799610147,
+            "volatility": 0.0002976563586667841,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 73,
+            "regime": "TRENDING",
+            "adxStrength": 59.9765054745518,
+            "volatility": 0.0003540403212588001,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 24.322143830214753,
+            "volatility": 0.00023761604573633807,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 59,
+            "regime": "TRENDING",
+            "adxStrength": 45.41779955526701,
+            "volatility": 0.00030023397609047284,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 14.128867953185043,
+            "volatility": 0.000334084460305317,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 6.1911510564134655,
+            "volatility": 0.00030094735223267286,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 16.642768807642582,
+            "volatility": 0.0003072009594180144,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 40,
+            "regime": "TRENDING",
+            "adxStrength": 25.259752631363952,
+            "volatility": 0.0003121573267922539,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 11.709884167033701,
+            "volatility": 0.0003308598277627279,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 45.152225488999456,
+            "volatility": 0.00030262197557003935,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 62.99057920414528,
+            "volatility": 0.0003162400779675855,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 49.644882526916305,
+            "volatility": 0.00031048512645051504,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 43,
+            "regime": "TRENDING",
+            "adxStrength": 45.452606213756106,
+            "volatility": 0.0003635213450739307,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 17.169310594068865,
+            "volatility": 0.0003278770225093981,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 51,
+            "regime": "RANGING",
+            "adxStrength": 4.824670818690283,
+            "volatility": 0.0003328364308144736,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "RANGING",
+            "adxStrength": 6.485783721221707,
+            "volatility": 0.0003291033457570434,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "TRENDING",
+            "adxStrength": 25.59335173267353,
+            "volatility": 0.0003242018559462965,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 45.1854686346815,
+            "volatility": 0.00032729656472896626,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 53,
+            "regime": "TRENDING",
+            "adxStrength": 40.9233306697727,
+            "volatility": 0.0003303602575485942,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 46,
+            "regime": "TRENDING",
+            "adxStrength": 44.5866846060827,
+            "volatility": 0.00033265989987750114,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 48.781633298193746,
+            "volatility": 0.000305715971519508,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 47.726313882423135,
+            "volatility": 0.00033733237433665664,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 44,
+            "regime": "TRENDING",
+            "adxStrength": 34.122229465936705,
+            "volatility": 0.0003173273184532406,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 50,
+            "regime": "RANGING",
+            "adxStrength": 6.976589300883212,
+            "volatility": 0.00033539296616115255,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 56,
+            "regime": "RANGING",
+            "adxStrength": 10.439841614377778,
+            "volatility": 0.0003347832920319704,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 64,
+            "regime": "TRENDING",
+            "adxStrength": 35.228220380834784,
+            "volatility": 0.00031802153192841916,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 59,
+            "regime": "TRENDING",
+            "adxStrength": 39.813452250080545,
+            "volatility": 0.0003609964000289871,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 36.84164509969236,
+            "volatility": 0.00035983962397760167,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 16.21660132176083,
+            "volatility": 0.00034052090701524777,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 15.273441111209829,
+            "volatility": 0.00036120658748324655,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 6.401467928518654,
+            "volatility": 0.0003924318885403354,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 2.3859590264561454,
+            "volatility": 0.0004017975284140764,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 58,
+            "regime": "TRENDING",
+            "adxStrength": 40.6357142273958,
+            "volatility": 0.0003605359250930378,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 53,
+            "regime": "TRENDING",
+            "adxStrength": 22.021402322178275,
+            "volatility": 0.00033173440681169466,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 45,
+            "regime": "RANGING",
+            "adxStrength": 8.792389819323366,
+            "volatility": 0.00031981199052602874,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 45,
+            "regime": "RANGING",
+            "adxStrength": 12.009423662166906,
+            "volatility": 0.00029234361443772507,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 14.474610063715323,
+            "volatility": 0.00028487216361655675,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 29.941507196078092,
+            "volatility": 0.00031857233619025357,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 14.057220298454112,
+            "volatility": 0.000317934755790548,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 51,
+            "regime": "RANGING",
+            "adxStrength": 10.358323751961809,
+            "volatility": 0.0002641917169964004,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 56,
+            "regime": "TRENDING",
+            "adxStrength": 25.07658600950452,
+            "volatility": 0.00029242289173879123,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 48,
+            "regime": "TRENDING",
+            "adxStrength": 21.698848238922714,
+            "volatility": 0.0002943831507335409,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 53,
+            "regime": "TRENDING",
+            "adxStrength": 35.02309908205486,
+            "volatility": 0.0002700937394084398,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 13.17519882192954,
+            "volatility": 0.00026074070368728946,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 1.4990752744554794,
+            "volatility": 0.00027825066495656514,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "TRENDING",
+            "adxStrength": 28.36942012054571,
+            "volatility": 0.0003317738711768733,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 18.156193261470968,
+            "volatility": 0.00032856518208510747,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 8.005316287723819,
+            "volatility": 0.000316663903925068,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 15.304140102745507,
+            "volatility": 0.0003378969406836336,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 46,
+            "regime": "TRENDING",
+            "adxStrength": 25.86890585006743,
+            "volatility": 0.00035909665520514306,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 23.36848789296609,
+            "volatility": 0.0003240853689568183,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 14.863747753545178,
+            "volatility": 0.00031032146681523855,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 3.292006240491907,
+            "volatility": 0.0003021810290375199,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 14.183494259030068,
+            "volatility": 0.0003633491350667336,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 53,
+            "regime": "RANGING",
+            "adxStrength": 16.378076158166223,
+            "volatility": 0.00031588105093250106,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 51,
+            "regime": "TRENDING",
+            "adxStrength": 25.92020386476405,
+            "volatility": 0.0002927703635989482,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 45,
+            "regime": "RANGING",
+            "adxStrength": 17.904444338558633,
+            "volatility": 0.00028142575654701684,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 63,
+            "regime": "TRENDING",
+            "adxStrength": 46.54555006035544,
+            "volatility": 0.00030507394112672234,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 59,
+            "regime": "TRENDING",
+            "adxStrength": 47.962787164414415,
+            "volatility": 0.00027245442155493304,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 35.81529967683142,
+            "volatility": 0.0002599302065578713,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 59,
+            "regime": "RANGING",
+            "adxStrength": 4.1662081767417005,
+            "volatility": 0.00026925178295168425,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 1.222161139780441,
+            "volatility": 0.00030167080123954284,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 51,
+            "regime": "TRENDING",
+            "adxStrength": 21.65899554101595,
+            "volatility": 0.00036535907190316273,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "RANGING",
+            "adxStrength": 9.776987021075938,
+            "volatility": 0.00037356571657074634,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 58,
+            "regime": "TRENDING",
+            "adxStrength": 25.342540148336273,
+            "volatility": 0.00038049478918622407,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 23.499783364343227,
+            "volatility": 0.00034189589132849744,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 68,
+            "regime": "TRENDING",
+            "adxStrength": 38.21228527810576,
+            "volatility": 0.00029646646920542305,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 53,
+            "regime": "RANGING",
+            "adxStrength": 4.917258849499221,
+            "volatility": 0.0003027335277069714,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 40,
+            "regime": "RANGING",
+            "adxStrength": 7.1129423374779925,
+            "volatility": 0.00032519864425242426,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 63.673449903804894,
+            "volatility": 0.0002849181394570509,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 70,
+            "regime": "TRENDING",
+            "adxStrength": 70.60889872709778,
+            "volatility": 0.0002875004132818263,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 35,
+            "regime": "TRENDING",
+            "adxStrength": 23.325447996760808,
+            "volatility": 0.0003356829053011704,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 69,
+            "regime": "TRENDING",
+            "adxStrength": 59.29125579005604,
+            "volatility": 0.00035331223340169803,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 45,
+            "regime": "TRENDING",
+            "adxStrength": 29.489304270057236,
+            "volatility": 0.0003458379280893665,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "TRENDING",
+            "adxStrength": 34.70794117025371,
+            "volatility": 0.0003634713882330057,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 23.14415683860476,
+            "volatility": 0.0004079782269779268,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 7.847013091511607,
+            "volatility": 0.00039547412404043763,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 58,
+            "regime": "TRENDING",
+            "adxStrength": 27.863450093794988,
+            "volatility": 0.0003835887348060549,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 44,
+            "regime": "RANGING",
+            "adxStrength": 15.260478445589595,
+            "volatility": 0.0003403753063220988,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 43,
+            "regime": "RANGING",
+            "adxStrength": 6.204090713590507,
+            "volatility": 0.0003509523947151856,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 49.943622384443756,
+            "volatility": 0.00033423641722554737,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 56,
+            "regime": "TRENDING",
+            "adxStrength": 46.72200467326878,
+            "volatility": 0.0003235446502548169,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 18.80186017596142,
+            "volatility": 0.00031913419330530237,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 43,
+            "regime": "RANGING",
+            "adxStrength": 2.1028622035711826,
+            "volatility": 0.0003303811993237251,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 43,
+            "regime": "RANGING",
+            "adxStrength": 0.2449282548381635,
+            "volatility": 0.0003185487966163298,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 38,
+            "regime": "RANGING",
+            "adxStrength": 18.829661588357233,
+            "volatility": 0.00032980207752822036,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 56,
+            "regime": "TRENDING",
+            "adxStrength": 34.6048130843073,
+            "volatility": 0.0003491772129324485,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 70,
+            "regime": "TRENDING",
+            "adxStrength": 59.1520757572236,
+            "volatility": 0.00038103336873223086,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 47,
+            "regime": "TRENDING",
+            "adxStrength": 38.16089249796607,
+            "volatility": 0.00039401024626138404,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 19.53761766315715,
+            "volatility": 0.000393941135470476,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 57,
+            "regime": "RANGING",
+            "adxStrength": 7.597926440870313,
+            "volatility": 0.0003602265962400754,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 67,
+            "regime": "RANGING",
+            "adxStrength": 4.986446195847839,
+            "volatility": 0.00035647384547656165,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 66,
+            "regime": "RANGING",
+            "adxStrength": 16.557047058927907,
+            "volatility": 0.0003483970929098377,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 44,
+            "regime": "RANGING",
+            "adxStrength": 19.715265914612576,
+            "volatility": 0.0003155738042309743,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "RANGING",
+            "adxStrength": 18.99175337791793,
+            "volatility": 0.0003137399315522927,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 53,
+            "regime": "RANGING",
+            "adxStrength": 9.965615958122836,
+            "volatility": 0.00030000552608928737,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 45,
+            "regime": "RANGING",
+            "adxStrength": 11.383318270426843,
+            "volatility": 0.0003286662927645759,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 54,
+            "regime": "RANGING",
+            "adxStrength": 17.896549519553425,
+            "volatility": 0.0002891746593753091,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 58,
+            "regime": "RANGING",
+            "adxStrength": 15.457350746596724,
+            "volatility": 0.00033898400138833207,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 29.72229137444807,
+            "volatility": 0.00033703360094173126,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 4.155787363409566,
+            "volatility": 0.00034321149159276243,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 36,
+            "regime": "RANGING",
+            "adxStrength": 10.307143983088187,
+            "volatility": 0.0003463149103766915,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 54,
+            "regime": "RANGING",
+            "adxStrength": 17.375439895795992,
+            "volatility": 0.00030333605505294975,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 51,
+            "regime": "TRENDING",
+            "adxStrength": 22.757164127711903,
+            "volatility": 0.0002697654766104886,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 42,
+            "regime": "RANGING",
+            "adxStrength": 9.233560631016863,
+            "volatility": 0.000289749341272011,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 33.71821211018393,
+            "volatility": 0.00030786753619094725,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 65,
+            "regime": "TRENDING",
+            "adxStrength": 51.78409148573382,
+            "volatility": 0.0003326290916030738,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 42,
+            "regime": "TRENDING",
+            "adxStrength": 25.78463289021095,
+            "volatility": 0.00033515933799479347,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 41,
+            "regime": "RANGING",
+            "adxStrength": 3.6353111257165645,
+            "volatility": 0.000339532569755368,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 21.91913224632178,
+            "volatility": 0.0003389050234586937,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 4.831358608507222,
+            "volatility": 0.00034698557220259814,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 63,
+            "regime": "TRENDING",
+            "adxStrength": 49.061527300219396,
+            "volatility": 0.00034696258858760295,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 50.06309780184287,
+            "volatility": 0.00027890963763537173,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 28.2392369237295,
+            "volatility": 0.0003037971909716591,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 67,
+            "regime": "TRENDING",
+            "adxStrength": 52.96530280295125,
+            "volatility": 0.0003304419352845155,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 38.76942706355041,
+            "volatility": 0.0003135924013076762,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 60,
+            "regime": "TRENDING",
+            "adxStrength": 46.93494318737182,
+            "volatility": 0.00032459392181092086,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 51,
+            "regime": "TRENDING",
+            "adxStrength": 27.95981034011621,
+            "volatility": 0.0003251635221240108,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 35,
+            "regime": "RANGING",
+            "adxStrength": 18.013538988271794,
+            "volatility": 0.0003406566006785087,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 37,
+            "regime": "RANGING",
+            "adxStrength": 12.037345444492074,
+            "volatility": 0.00022811703435671518,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 51.702843994792566,
+            "volatility": 0.0002463466051944634,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 62,
+            "regime": "TRENDING",
+            "adxStrength": 51.702843994792566,
+            "volatility": 0.0002183861475239776,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 61,
+            "regime": "TRENDING",
+            "adxStrength": 51.702843994792566,
+            "volatility": 0.00020471043056261706,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 59,
+            "regime": "TRENDING",
+            "adxStrength": 51.702843994792566,
+            "volatility": 0.0001350467130936802,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 50,
+            "regime": "RANGING",
+            "adxStrength": 7.246333169670171,
+            "volatility": 0.00029889087100366807,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 51,
+            "regime": "TRENDING",
+            "adxStrength": 27.22893999668623,
+            "volatility": 0.0003207891036758541,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 52,
+            "regime": "TRENDING",
+            "adxStrength": 23.826862848049082,
+            "volatility": 0.0003583451583066493,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 73,
+            "regime": "TRENDING",
+            "adxStrength": 57.49071455139985,
+            "volatility": 0.00029854168956321814,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 68,
+            "regime": "TRENDING",
+            "adxStrength": 56.6730448328211,
+            "volatility": 0.00036395623053600735,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 35.87980268222423,
+            "volatility": 0.0003271570634056225,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 49,
+            "regime": "TRENDING",
+            "adxStrength": 26.877843673593638,
+            "volatility": 0.0003316438929501031,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 50,
+            "regime": "TRENDING",
+            "adxStrength": 29.03974608674836,
+            "volatility": 0.00031035796185726493,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 57,
+            "regime": "RANGING",
+            "adxStrength": 12.915724997344519,
+            "volatility": 0.00032977150846888193,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 43,
+            "regime": "TRENDING",
+            "adxStrength": 21.8794283504682,
+            "volatility": 0.00032596450860816783,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 55,
+            "regime": "TRENDING",
+            "adxStrength": 20.455302240417343,
+            "volatility": 0.00032965924139517576,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 45,
+            "regime": "TRENDING",
+            "adxStrength": 25.414006145807093,
+            "volatility": 0.0003508431858140097,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "BUY",
+            "confidence": 49,
+            "regime": "RANGING",
+            "adxStrength": 17.10686995356693,
+            "volatility": 0.00027945046004377547,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 54,
+            "regime": "TRENDING",
+            "adxStrength": 33.39481795148576,
+            "volatility": 0.00028262434311774855,
+            "duration": 5,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 39,
+            "regime": "RANGING",
+            "adxStrength": 13.935704546001759,
+            "volatility": 0.00028014485557217807,
+            "duration": 3,
+            "result": "LOSS"
+        },
+        {
+            "action": "SELL",
+            "confidence": 49,
+            "regime": "RANGING",
+            "adxStrength": 2.9112913038417405,
+            "volatility": 0.0002732693728399038,
+            "duration": 3,
+            "result": "LOSS"
+        }
+    ],
+    "bestConfidenceRange": {
+        "30": {
+            "wins": 35,
+            "losses": 28
+        },
+        "40": {
+            "wins": 38,
+            "losses": 47
+        },
+        "50": {
+            "wins": 48,
+            "losses": 54
+        },
+        "60": {
+            "wins": 29,
+            "losses": 23
+        },
+        "70": {
+            "wins": 8,
+            "losses": 4
+        }
+    }
+}
